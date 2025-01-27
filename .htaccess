@@ -1,0 +1,17 @@
+RewriteEngine On  
+    
+   RewriteRule ^login$        login.php
+   RewriteRule ^index|home$        index.php
+   RewriteRule ^about$        about.php
+   RewriteRule ^services$      services.php
+   RewriteRule ^blog$         blog.php
+   RewriteRule ^shop$         shop.php
+   RewriteRule ^register$     register.php
+   RewriteRule ^login$     login.php
+   RewriteRule ^contact/([a-z0-9-]+)$      contact.php?mat=$1
+   RewriteRule ^contact$         contact.php
+
+   RewriteRule ^login/([a-z0-9-]+)$  admin/login.php?mat=$1
+   RewriteRule ^home/([a-z0-9-]+)$  index.php?id=$1
+
+   RewriteRule ^detail_recette/([A-Z0-9-]+)$      detail_recette.php?mat=$1
