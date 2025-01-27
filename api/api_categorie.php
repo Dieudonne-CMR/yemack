@@ -69,5 +69,17 @@ function recup_mat_cat(){
       $recup_mat_cat[]= $value->id_categorie;
   }
   return $recup_mat_cat;
+};
+
+/*
+object(stdClass)#8 (8) { 
+["id"]=> string(2) "49" 
+["nom"]=> string(9) "Marketing" 
+["date"]=> string(19) "2023-11-08 18:09:12" 
+["matricule_entreprise"]=> string(13) "654b7262c7d05" 
+["matricule_cat"]=> string(7) "8978312" 
+["image"]=> NULL ["description"]=> NULL 
 }
+*/
+
 //-------------------------fin

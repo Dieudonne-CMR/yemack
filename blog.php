@@ -1,6 +1,7 @@
 <?php 
 include('api/cle_api.php');
 $obj_tous_post = recup_article();
+// var_dump($obj_tous_post);
 ?>
 <!DOCTYPE html>
 <html lang="zxx">
@@ -47,369 +48,9 @@ $obj_tous_post = recup_article();
             </div>
         </div>
 
-        <header class="top-header top-header-bg-two">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-3 col-md-4">
-                        <div class="header-left">
-                            <p>Welcome To Arrola Health!</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-9 col-md-8">
-                        <div class="header-right d-flex align-items-center">
-                            <div class="header-item">
-                                <ul>
-                                    <li class="title">Follow us :</li>
-                                    <li>
-                                        <a href="https://www.facebook.com/" target="_blank">
-                                            <i class="bx bxl-facebook"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.instagram.com/" target="_blank">
-                                            <i class="bx bxl-instagram"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://twitter.com/" target="_blank">
-                                            <i class="bx bxl-twitter"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.youtube.com/" target="_blank">
-                                            <i class="bx bxl-youtube"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="header-item">
-                                <a href="cart.html" class="cart-top-btn">
-                                    <i class="bx bx-shopping-bag"></i>
-                                    <span>0</span>
-                                </a>
-                            </div>
-                            <div class="header-item">
-                                <div class="header-language dropdown language-option">
-                                    <button class="dropdown-toggle" type="button" id="language1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <i class="bx bx-world"></i>
-                                        <span class="lang-name"></span>
-                                    </button>
-                                    <div class="dropdown-menu language-dropdown-menu" aria-labelledby="language1">
-                                        <a class="dropdown-item" href="#">
-                                            <img src="assets/images/uk.png" alt="flag" />
-                                            English
-                                        </a>
-                                        <a class="dropdown-item" href="#">
-                                            <img src="assets/images/china.png" alt="flag" />
-                                            简体中文
-                                        </a>
-                                        <a class="dropdown-item" href="#">
-                                            <img src="assets/images/uae.png" alt="flag" />
-                                            العربيّة
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
+     <?php include('includes/header.php') ?>
 
-        <div class="navbar-area">
-            <div class="mobile-responsive-nav">
-                <div class="container">
-                    <div class="mobile-responsive-menu">
-                        <div class="logo">
-                            <a href="index.html">
-                                <img src="assets/images/logo.png" class="logo-one" alt="Logo" />
-                                <img src="assets/images/logo-white.png" class="logo-two" alt="Logo" />
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="desktop-nav nav-area">
-                <div class="container">
-                    <nav class="navbar navbar-expand-md navbar-light">
-                        <a class="navbar-brand" href="index.html">
-                            <img src="assets/images/logo.png" class="logo-one" alt="Logo" />
-                            <img src="assets/images/logo-white.png" class="logo-two" alt="Logo" />
-                        </a>
-                        <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
-                            <ul class="navbar-nav m-auto">
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        Home
-                                        <i class="bx bx-chevron-down"></i>
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item">
-                                            <a href="index.html" class="nav-link">
-                                                Home One
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="index-2.html" class="nav-link">
-                                                Home Two
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="index-3.html" class="nav-link">
-                                                Home Three
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        Pages
-                                        <i class="bx bx-chevron-down"></i>
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item">
-                                            <a href="about.html" class="nav-link">
-                                                About Us
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="team.html" class="nav-link">
-                                                Team
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="testimonials.html" class="nav-link">
-                                                Testimonials
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="nutritionist.html" class="nav-link">
-                                                Nutritionist
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">
-                                                Portfolio
-                                                <i class="bx bx-chevron-down"></i>
-                                            </a>
-                                            <ul class="dropdown-menu">
-                                                <li class="nav-item">
-                                                    <a href="portfolio.html" class="nav-link">
-                                                        Portfolio
-                                                    </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="portfolio-details.html" class="nav-link">
-                                                        Portfolio Details
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="appointment.html" class="nav-link">
-                                                Appointment
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">
-                                                Recipe
-                                                <i class="bx bx-chevron-down"></i>
-                                            </a>
-                                            <ul class="dropdown-menu">
-                                                <li class="nav-item">
-                                                    <a href="recipe.html" class="nav-link">
-                                                        Recipe
-                                                    </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="recipe-details.html" class="nav-link">
-                                                        Recipe Details
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="pricing.html" class="nav-link">
-                                                Pricing Plan
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="faq.html" class="nav-link">
-                                                FAQ
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">
-                                                User
-                                                <i class="bx bx-chevron-down"></i>
-                                            </a>
-                                            <ul class="dropdown-menu">
-                                                <li class="nav-item">
-                                                    <a href="login.html" class="nav-link">
-                                                        Log In
-                                                    </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="register.html" class="nav-link">
-                                                        Register
-                                                    </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="forgot-password.html" class="nav-link">
-                                                        Forgot Password
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="terms-condition.html" class="nav-link">
-                                                Terms & Conditions
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="privacy-policy.html" class="nav-link">
-                                                Privacy Policy
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="404.html" class="nav-link">
-                                                404 Page
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="coming-soon.html" class="nav-link">
-                                                Coming Soon
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        Shop
-                                        <i class="bx bx-chevron-down"></i>
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item">
-                                            <a href="shop.html" class="nav-link">Shop</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="cart.html" class="nav-link">Cart</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="checkout.html" class="nav-link">Checkout</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="wishlist.html" class="nav-link">Wishlist</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="shop-details.html" class="nav-link">Shop Details</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        Services
-                                        <i class="bx bx-chevron-down"></i>
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item">
-                                            <a href="service-1.html" class="nav-link">
-                                                Services Style One
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="service-2.html" class="nav-link">
-                                                Services Style Two
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="service-details.html" class="nav-link">
-                                                Service Details
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link active">
-                                        Blog
-                                        <i class="bx bx-chevron-down"></i>
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item">
-                                            <a href="blog-1.html" class="nav-link">
-                                                Blog Grid
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="blog-2.html" class="nav-link">
-                                                Blog Left Sidebar
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="blog-3.html" class="nav-link active">
-                                                Blog Right Sidebar
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="blog-details.html" class="nav-link">
-                                                Blog Details
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="author.html" class="nav-link">
-                                                Author
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="categories.html" class="nav-link">
-                                                Categories
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="tags.html" class="nav-link">
-                                                Tags
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="contact.html" class="nav-link">
-                                        Contact Us
-                                    </a>
-                                </li>
-                            </ul>
-                            <div class="others-options d-flex align-items-center">
-                                <div class="optional-item">
-                                    <div class="search-btn">
-                                        <a class="#" href="#searchmodal" data-bs-toggle="modal" data-bs-target="#searchmodal">
-                                            <i class="bx bx-search"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="optional-item">
-                                    <a href="appointment.html" class="default-btn two">Book An Appointment</a>
-                                </div>
-                            </div>
-                            <div class="mobile-nav">
-                                <div class="mobile-other d-flex align-items-center">
-                                    <div class="optional-item">
-                                        <div class="search-btn">
-                                            <a class="#" href="#searchmodal" data-bs-toggle="modal" data-bs-target="#searchmodal">
-                                                <i class="bx bx-search"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="optional-item">
-                                        <a href="appointment.html" class="default-btn two">Appointment</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </div>
+      
 
         <div class="inner-banner inner-bg6">
             <div class="container">
@@ -428,21 +69,25 @@ $obj_tous_post = recup_article();
         <div class="blog-widget-area pt-100 pb-70">
             <div class="container">
                 <div class="row">
+
                     <div class="col-lg-8">
                         <div class="row justify-content-center">
-                            <div class="col-lg-6 col-md-6">
-                                <div class="blog-item">
-                                    <a href="blog-details.html">
-                                        <img src="assets/images/blog/blog-img2.jpg" alt="Blog Images" />
-                                    </a>
-                                    <div class="content">
-                                        <span><i class="flaticon-calendar-1"></i> 22 April, 2021</span>
-                                        <h3><a href="blog-details.html">7 Healthy & Simp,gluten free Cookie, Cake Recipes</a></h3>
-                                        <a href="blog-details.html" class="read-btn">Read More</a>
+                            <?php foreach($obj_tous_post as $key=>$value) :?>
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="blog-item">
+                                        <a href="blog-details.html">
+                                            <img src="<?php echo $url_image . $value ->photo ?>" alt="Blog Images" />
+                                        </a>
+                                        <div class="content">
+                                            <span><i class="flaticon-calendar-1"></i> <?= data_date($value ->date)  ?></span>
+                                            <h3><a href="blog.detail.php?mat_art=<?= $value->matricule ?>"> <?= $value -> titre ?></a></h3>
+                                            <a href="blog.detail.php?mat_art=<?= $value->matricule ?>" class="read-btn">Lire plus </a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6">
+                            <?php endforeach; ?>
+
+                            <?php /*<div class="col-lg-6 col-md-6">
                                 <div class="blog-item">
                                     <a href="blog-details.html">
                                         <img src="assets/images/blog/blog-img3.jpg" alt="Blog Images" />
@@ -538,131 +183,14 @@ $obj_tous_post = recup_article();
                                         <i class="bx bx-chevron-right"></i>
                                     </a>
                                 </div>
-                            </div>
+                            </div> */?>
                         </div>
                     </div>
+
                     <div class="col-lg-4">
-                        <div class="side-bar-area pl-20">
-                            <div class="search-widget">
-                                <form class="search-form">
-                                    <input type="search" class="form-control" placeholder="Search..." />
-                                    <button type="submit">
-                                        <i class="bx bx-search"></i>
-                                    </button>
-                                </form>
-                            </div>
-                            <div class="side-bar-categories">
-                                <ul>
-                                    <li>
-                                        <a href="categories.html" target="_blank">
-                                            Personalized Nutrition
-                                            <i class="bx bx-right-arrow-alt"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="categories.html" target="_blank">
-                                            Health Nutrition
-                                            <i class="bx bx-right-arrow-alt"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="categories.html" target="_blank">
-                                            Weight Loss Program
-                                            <i class="bx bx-right-arrow-alt"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="categories.html" target="_blank">
-                                            Sports Nutritionist
-                                            <i class="bx bx-right-arrow-alt"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="categories.html" target="_blank">
-                                            Child Nutritionist
-                                            <i class="bx bx-right-arrow-alt"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="categories.html" target="_blank">
-                                            Workout Program
-                                            <i class="bx bx-right-arrow-alt"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="side-bar-widget">
-                                <h3 class="title">Recent Post</h3>
-                                <div class="widget-popular-post">
-                                    <article class="item">
-                                        <a href="blog-details.html" class="thumb">
-                                            <span class="full-image cover bg1" role="img"></span>
-                                        </a>
-                                        <div class="info">
-                                            <h4 class="title-text">
-                                                <a href="blog-details.html">
-                                                    5 Tips For Making Delicious Food For all
-                                                </a>
-                                            </h4>
-                                            <a href="blog-details.html" class="read-btn" target="_blank">Read More</a>
-                                        </div>
-                                    </article>
-                                    <article class="item">
-                                        <a href="blog-details.html" class="thumb">
-                                            <span class="full-image cover bg2" role="img"></span>
-                                        </a>
-                                        <div class="info">
-                                            <h4 class="title-text">
-                                                <a href="blog-details.html">
-                                                    Top 15 Vegan Easy Recipe to Get More Details
-                                                </a>
-                                            </h4>
-                                            <a href="blog-details.html" class="read-btn" target="_blank">Read More</a>
-                                        </div>
-                                    </article>
-                                    <article class="item">
-                                        <a href="blog-details.html" class="thumb">
-                                            <span class="full-image cover bg3" role="img"></span>
-                                        </a>
-                                        <div class="info">
-                                            <h4 class="title-text">
-                                                <a href="blog-details.html">
-                                                    Restaurants cafe Popular Recipe from Our Site
-                                                </a>
-                                            </h4>
-                                            <a href="blog-details.html" class="read-btn" target="_blank">Read More</a>
-                                        </div>
-                                    </article>
-                                    <article class="item">
-                                        <a href="blog-details.html" class="thumb">
-                                            <span class="full-image cover bg4" role="img"></span>
-                                        </a>
-                                        <div class="info">
-                                            <h4 class="title-text">
-                                                <a href="blog-details.html">
-                                                    Top 8 Ways for Living Healthy Life Important
-                                                </a>
-                                            </h4>
-                                            <a href="blog-details.html" class="read-btn" target="_blank">Read More</a>
-                                        </div>
-                                    </article>
-                                </div>
-                            </div>
-                            <div class="side-bar-widget">
-                                <h3 class="title-tag">Popular Tags</h3>
-                                <ul class="side-bar-widget-tag">
-                                    <li><a href="tags.html" target="_blank">Health</a></li>
-                                    <li><a href="tags.html" target="_blank">Food</a></li>
-                                    <li><a href="tags.html" target="_blank">Happy</a></li>
-                                    <li><a href="tags.html" target="_blank">Nutrition</a></li>
-                                    <li><a href="tags.html" target="_blank">Doctor</a></li>
-                                    <li><a href="tags.html" target="_blank">Work</a></li>
-                                    <li><a href="tags.html" target="_blank">Organic</a></li>
-                                    <li><a href="tags.html" target="_blank">Healthy</a></li>
-                                </ul>
-                            </div>
-                        </div>
+                        <?php include("includes/side-bar.php")?>
                     </div>
+
                 </div>
             </div>
         </div>

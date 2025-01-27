@@ -4,19 +4,23 @@ if (isset($_GET['mat_art']) AND !empty($_GET['mat_art'])) {
     $mat_post=$_GET['mat_art'];
     $detail_post = recup_detail_post($mat_post);
     if(!empty($detail_post)):
-        $titre= $detail_post->titre;
+        $titre= $detail_post->titre; 
         $image= $detail_post->photo;
         $content= $detail_post->content;
         $date= $detail_post->date;
         $id_categorie = $detail_post->id_categorie;
+        $nom_de_categorie=info_cat_post($id_categorie)->nom;
         $matricule_admin = $detail_post->matricule_admin;
+
+        $info_hauteur= info_admin($matricule_admin);
+        $hauteur = $info_hauteur-> nom .' '. $info_hauteur->prenom;
         // $date= $detail_post->date;
     else:
-        header("location:blog.detail.php");
+        header("location:blog.php");
     endif;
 
 }else{
-    header("location:blog.detail.php");
+    header("location:blog.php");
 
 } 
 ?>
@@ -529,6 +533,7 @@ if (isset($_GET['mat_art']) AND !empty($_GET['mat_art'])) {
                                     </div>
                                 </div>
                             </div>
+                            
                             <div class="comments-wrap">
                                 <div class="comment-title">
                                     <h4>3 Comments :</h4>
@@ -614,7 +619,9 @@ if (isset($_GET['mat_art']) AND !empty($_GET['mat_art'])) {
                             </div>
                         </div>
                     </div>
+
                     <div class="col-lg-4">
+
                         <div class="side-bar-area pl-20">
                             <div class="search-widget">
                                 <form class="search-form">
@@ -735,6 +742,7 @@ if (isset($_GET['mat_art']) AND !empty($_GET['mat_art'])) {
                                 </ul>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>

@@ -1,0 +1,3 @@
+- travailler le header
+-travailler la side-bar ( afficher les articles)
+- travailler la page detaille article.
