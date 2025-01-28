@@ -12,6 +12,7 @@ if (isset($_GET['mat_art']) AND !empty($_GET['mat_art'])) {
         $id_categorie = $detail_post->id_categorie;
         $nom_de_categorie=info_cat_post($id_categorie)->nom;
         $matricule_admin = $detail_post->matricule_admin;
+        
 
         $info_hauteur= info_admin($matricule_admin);
         $hauteur = $info_hauteur-> nom .' '. $info_hauteur->prenom;
@@ -97,7 +98,8 @@ if (isset($_GET['mat_art']) AND !empty($_GET['mat_art'])) {
                                 <li class="active">
                                     <a href="author.html"> <i class="bx bx-user"></i> <?php echo $hauteur ?> </a>
                                 </li>
-                                <li><i class="bx bx-calendar"></i> <?php echo $date ?></li>
+                                <li><i class="bx bx-calendar"></i> <?php echo $date ?></li> 
+                                <li><i class="bx bx-comment-dots"></i> <?= $nom_de_categorie ?></li>
                                 <!-- <li><i class="bx bx-comment-dots"></i> 3 Comments</li> -->
                             </ul>
                             <h2> <?php echo $titre ?></h2>
