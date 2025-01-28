@@ -9,16 +9,15 @@
         </form>
     </div>
     <div class="side-bar-categories">
+    <?php foreach ($category as $key => $value) : ?>
         <ul>
-
             <li>
-                <a href="categories.html" target="_blank">
-                    Personalized Nutrition
+                <a href="blog.php?mat_categori= <?= $value->matricule_cat ?>" target="_blank">
+                    <?php echo $value->nom ?>
                     <i class="bx bx-right-arrow-alt"></i>
                 </a>
             </li>
-
-            <li>
+            <!-- <li>
                 <a href="categories.html" target="_blank">
                     Health Nutrition
                     <i class="bx bx-right-arrow-alt"></i>
@@ -51,9 +50,10 @@
                     Workout Program
                     <i class="bx bx-right-arrow-alt"></i>
                 </a>
-            </li>
+            </li> -->
 
         </ul>
+    <?php endforeach ?>
     </div> 
 
     <div class="side-bar-widget">
@@ -76,7 +76,7 @@
                         <div class="info">
                             <h4 class="title-text">
                                 <a href="blog.detail.php?mat_art=<?=$value->matricule ?>"> 
-                                <?= $value->titre ?>
+                                <?=$value->titre ?>
                                 </a>
                             </h4>
                             <a href="blog.detail.php?mat_art=<?=$value->matricule ?>" class="read-btn" target="_blank">Read More</a>

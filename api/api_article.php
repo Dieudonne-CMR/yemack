@@ -27,7 +27,6 @@ function recup_article(){
         ),
     ); 
 
-
   $url="https://akila.blog/api/articles/$matricule_entreprise";
 
   $options = array(

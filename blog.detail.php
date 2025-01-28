@@ -1,5 +1,6 @@
 <?php
 include('api/cle_api.php');
+$category = recup_category();
 if (isset($_GET['mat_art']) AND !empty($_GET['mat_art'])) {
     $mat_post=$_GET['mat_art'];
     $detail_post = recup_detail_post($mat_post);
@@ -70,17 +71,14 @@ if (isset($_GET['mat_art']) AND !empty($_GET['mat_art'])) {
             </div>
         </div>
 
-        <?php  include("includes/headerdetail.php") ?>
+        <?php  include("includes/header.php") ?>
 
         <div class="inner-banner inner-bg3">
             <div class="container">
                 <div class="inner-title text-center">
-                    <h3>Blog Details</h3>
+                    <h3><?php echo $titre ?></h3>
                     <ul>
-                        <li>
-                            <a href="index.html">Home</a>
-                        </li>
-                        <li>Blog Details</li>
+                        <li></li>
                     </ul>
                 </div>
             </div>
@@ -91,22 +89,24 @@ if (isset($_GET['mat_art']) AND !empty($_GET['mat_art'])) {
                 <div class="row">
                     <div class="col-lg-8">
                         <div class="blog-details-content">
+                
                             <div class="blog-preview-img">
-                                <img src="assets/images/blog/blog-details.jpg" alt="Blog Images" />
+                                <img src= <?php echo $url_image . $image ?>  alt="Blog Images" /> 
                             </div>
                             <ul class="tag-list">
                                 <li class="active">
-                                    <a href="author.html"> <i class="bx bx-user"></i>By John </a>
+                                    <a href="author.html"> <i class="bx bx-user"></i> <?php echo $hauteur ?> </a>
                                 </li>
-                                <li><i class="bx bx-calendar"></i> 16 April</li>
-                                <li><i class="bx bx-comment-dots"></i> 3 Comments</li>
+                                <li><i class="bx bx-calendar"></i> <?php echo $date ?></li>
+                                <!-- <li><i class="bx bx-comment-dots"></i> 3 Comments</li> -->
                             </ul>
-                            <h2>7 health tips For your body how to keep fit?</h2>
+                            <h2> <?php echo $titre ?></h2>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan
-                                lacus vel facilisis. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-                                galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, electronic.
+                                <?php echo $content ?>
                             </p>
+                            <?php foreach ($category as $key => $value) :?>
+                            <p> <?php echo $value->nom ?> </p>
+                            <?php endforeach ?>
 
                            
                             <div class="article-share">

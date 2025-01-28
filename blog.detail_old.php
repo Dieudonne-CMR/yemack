@@ -91,23 +91,23 @@ if (isset($_GET['mat_art']) AND !empty($_GET['mat_art'])) {
         <div class="blog-details-area pt-100 pb-70">
             <div class="container">
                 <div class="row">
-                    <?php foreach ($detail_post as $key => $value) : ?>
                       <div class="col-lg-8">
                            <div class="blog-details-content">
                                <div class="blog-preview-img">
-                                   <img src=<?php echo $url_image . $value->photo ?>  alt="Blog Images" /> 
+                                   <img src=<?php echo $url_image . $photo ?>  alt="Blog Images" /> 
                                </div>
                                <ul class="tag-list">
                                    <li class="active">
                                        <a href="author.html"> <i class="bx bx-user"></i> <?php echo $hauteur  ?></a>
                                    </li>
-                                   <li><i class="bx bx-calendar"></i> <?=data_date($value->date) ?></li>
-                                   <li><i class="bx bx-comment-dots"></i> 3 Comments</li>
+                                   <li><i class="bx bx-calendar"></i> <?=data_date($date) ?></li>
+                                   <!-- <li><i class="bx bx-comment-dots"></i> 3 Comments</li> -->
                                </ul>
-                               <h2> <?php echo $value->titre ?> </h2>
+                               <h2> <?php echo $titre ?> </h2>
                                <p>
-                                   <?php echo $value->content ?>
+                                   <?php echo $content ?>
                                </p> 
+                               <p><?php echo $nom_de_categorie ?></p>
                                <!-- <p>
                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan
                                    lacus vel facilisis. Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -258,7 +258,6 @@ if (isset($_GET['mat_art']) AND !empty($_GET['mat_art'])) {
                                </div>  -->
                            </div>
                        </div>
-                    <?php endforeach ?>
 
                     <div class="col-lg-4">
                         <?php include("includes/side-bar-detail.php") ?>
