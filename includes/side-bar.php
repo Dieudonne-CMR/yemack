@@ -1,3 +1,9 @@
+<?php include("api/cle_api.php");
+$obj_tous_post= recup_article();
+
+
+?>
+
 <div class="side-bar-area pl-20">
     <div class="search-widget">
         <form class="search-form">
@@ -57,7 +63,7 @@
     <div class="side-bar-widget">
         <h3 class="title">Recent Post</h3>
         <div class="widget-popular-post">
-
+        <!-- <?/*php foreach ($obj_tous_post as $key => $value) : */?> -->
             <article class="item">
                 <a href="blog-details.html" class="thumb">
                     <span class="full-image cover bg1" role="img"></span>
@@ -65,14 +71,15 @@
                 <div class="info">
                     <h4 class="title-text">
                         <a href="blog-details.html">
-                            5 Tips For Making Delicious Food For all
+                           <?= $value->titre ?>
                         </a>
                     </h4>
                     <a href="blog-details.html" class="read-btn" target="_blank">Read More</a>
                 </div>
             </article>
+            <?/*php endforeach */?>
 
-            <article class="item">
+            <!-- <article class="item">
                 <a href="blog-details.html" class="thumb">
                     <span class="full-image cover bg2" role="img"></span>
                 </a>
@@ -112,7 +119,7 @@
                     </h4>
                     <a href="blog-details.html" class="read-btn" target="_blank">Read More</a>
                 </div>
-            </article>
+            </article> -->
             
         </div>
     </div>
