@@ -1,83 +1,24 @@
-<?php include("api/cle_api.php");
-$obj_tous_post= recup_article();
-
-
-?>
-
-<div class="side-bar-area pl-20">
-    <div class="search-widget">
-        <form class="search-form">
-            <input type="search" class="form-control" placeholder="Search..." />
-            <button type="submit">
-                <i class="bx bx-search"></i>
-            </button>
-        </form>
-    </div>
-    <div class="side-bar-categories">
-        <ul>
-
-            <li>
-                <a href="categories.html" target="_blank">
-                    Personalized Nutrition
-                    <i class="bx bx-right-arrow-alt"></i>
-                </a>
-            </li>
-
-            <li>
-                <a href="categories.html" target="_blank">
-                    Health Nutrition
-                    <i class="bx bx-right-arrow-alt"></i>
-                </a>
-            </li>
-
-            <li>
-                <a href="categories.html" target="_blank">
-                    Weight Loss Program
-                    <i class="bx bx-right-arrow-alt"></i>
-                </a>
-            </li>
-
-            <li>
-                <a href="categories.html" target="_blank">
-                    Sports Nutritionist
-                    <i class="bx bx-right-arrow-alt"></i>
-                </a>
-            </li>
-
-            <li>
-                <a href="categories.html" target="_blank">
-                    Child Nutritionist
-                    <i class="bx bx-right-arrow-alt"></i>
-                </a>
-            </li>
-
-            <li>
-                <a href="categories.html" target="_blank">
-                    Workout Program
-                    <i class="bx bx-right-arrow-alt"></i>
-                </a>
-            </li>
-
-        </ul>
-    </div>
-    <div class="side-bar-widget">
+<div class="side-bar-widget">
         <h3 class="title">Recent Post</h3>
         <div class="widget-popular-post">
-        <!-- <?/*php foreach ($obj_tous_post as $key => $value) : */?> -->
+        <?php foreach ($obj_tous_post as $key => $value) : ?>
+
             <article class="item">
+
                 <a href="blog-details.html" class="thumb">
                     <span class="full-image cover bg1" role="img"></span>
                 </a>
                 <div class="info">
                     <h4 class="title-text">
-                        <a href="blog-details.html">
-                           <?= $value->titre ?>
+                        <a href="blog.detail.php?mat_art=<?=$value->matricule ?>"> 
+                        <?= $value->titre ?>
                         </a>
                     </h4>
-                    <a href="blog-details.html" class="read-btn" target="_blank">Read More</a>
+                    <a href="blog.detail.php?mat_art=<?=$value->matricule ?>" class="read-btn" target="_blank">Read More</a>
                 </div>
+
             </article>
-            <?/*php endforeach */?>
+            <?php endforeach ?>
 
             <!-- <article class="item">
                 <a href="blog-details.html" class="thumb">
@@ -123,17 +64,3 @@ $obj_tous_post= recup_article();
             
         </div>
     </div>
-    <div class="side-bar-widget">
-        <h3 class="title-tag">Popular Tags</h3>
-        <ul class="side-bar-widget-tag">
-            <li><a href="tags.html" target="_blank">Health</a></li>
-            <li><a href="tags.html" target="_blank">Food</a></li>
-            <li><a href="tags.html" target="_blank">Happy</a></li>
-            <li><a href="tags.html" target="_blank">Nutrition</a></li>
-            <li><a href="tags.html" target="_blank">Doctor</a></li>
-            <li><a href="tags.html" target="_blank">Work</a></li>
-            <li><a href="tags.html" target="_blank">Organic</a></li>
-            <li><a href="tags.html" target="_blank">Healthy</a></li>
-        </ul>
-    </div>
-</div>

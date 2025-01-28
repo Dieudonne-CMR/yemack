@@ -5,6 +5,7 @@ $obj_tous_post= recup_article();
 if (isset($_GET['mat_art']) AND !empty($_GET['mat_art'])) {
     $mat_post=$_GET['mat_art'];
     $detail_post = recup_detail_post($mat_post);
+    var_dump($detail_post);
     if(!empty($detail_post)):
         $titre= $detail_post->titre; 
         $image= $detail_post->photo;
@@ -90,7 +91,7 @@ if (isset($_GET['mat_art']) AND !empty($_GET['mat_art'])) {
         <div class="blog-details-area pt-100 pb-70">
             <div class="container">
                 <div class="row">
-                    <?php foreach ($obj_tous_post as $key => $value) : ?>
+                    <?php foreach ($detail_post as $key => $value) : ?>
                       <div class="col-lg-8">
                            <div class="blog-details-content">
                                <div class="blog-preview-img">
@@ -98,18 +99,16 @@ if (isset($_GET['mat_art']) AND !empty($_GET['mat_art'])) {
                                </div>
                                <ul class="tag-list">
                                    <li class="active">
-                                       <a href="author.html"> <i class="bx bx-user"></i> <?php echo $value->hauteur ?></a>
+                                       <a href="author.html"> <i class="bx bx-user"></i> <?php echo $hauteur  ?></a>
                                    </li>
                                    <li><i class="bx bx-calendar"></i> <?=data_date($value->date) ?></li>
                                    <li><i class="bx bx-comment-dots"></i> 3 Comments</li>
                                </ul>
-                               <h2> <?= $value->titre ?> </h2>
-                               <!-- <p>
-                                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan
-                                   lacus vel facilisis. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-                                   galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, electronic.
-                               </p>
+                               <h2> <?php echo $value->titre ?> </h2>
                                <p>
+                                   <?php echo $value->content ?>
+                               </p> 
+                               <!-- <p>
                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan
                                    lacus vel facilisis. Lorem Ipsum is simply dummy text of the printing and typesetting
                                </p>
@@ -256,7 +255,7 @@ if (isset($_GET['mat_art']) AND !empty($_GET['mat_art'])) {
                                            </div>
                                        </form>
                                    </div>
-                               </div> -->
+                               </div>  -->
                            </div>
                        </div>
                     <?php endforeach ?>
@@ -273,14 +272,15 @@ if (isset($_GET['mat_art']) AND !empty($_GET['mat_art'])) {
                                 </form>
                             </div>
                             <div class="side-bar-categories">
+                                <?php foreach ($obj_tous_post as $key => $value) : ?>
                                 <ul>
                                     <li>
                                         <a href="categories.html" target="_blank">
-                                            Personalized Nutrition
+                                            <?php echo $nom_de_categorie ?>
                                             <i class="bx bx-right-arrow-alt"></i>
                                         </a>
                                     </li>
-                                    <li>
+                                    <!-- <li>
                                         <a href="categories.html" target="_blank">
                                             Health Nutrition
                                             <i class="bx bx-right-arrow-alt"></i>
@@ -309,66 +309,11 @@ if (isset($_GET['mat_art']) AND !empty($_GET['mat_art'])) {
                                             Workout Program
                                             <i class="bx bx-right-arrow-alt"></i>
                                         </a>
-                                    </li>
+                                    </li> -->
                                 </ul>
+                                <?php endforeach ?>
                             </div>
-                            <div class="side-bar-widget">
-                                <h3 class="title">Recent Post</h3>
-                                <div class="widget-popular-post">
-                                    <article class="item">
-                                        <a href="blog-details.html" class="thumb">
-                                            <span class="full-image cover bg1" role="img"></span>
-                                        </a>
-                                        <div class="info">
-                                            <h4 class="title-text">
-                                                <a href="blog-details.html">
-                                                    5 Tips For Making Delicious Food For all
-                                                </a>
-                                            </h4>
-                                            <a href="blog-details.html" class="read-btn" target="_blank">Read More</a>
-                                        </div>
-                                    </article>
-                                    <article class="item">
-                                        <a href="blog-details.html" class="thumb">
-                                            <span class="full-image cover bg2" role="img"></span>
-                                        </a>
-                                        <div class="info">
-                                            <h4 class="title-text">
-                                                <a href="blog-details.html">
-                                                    Top 15 Vegan Easy Recipe to Get More Details
-                                                </a>
-                                            </h4>
-                                            <a href="blog-details.html" class="read-btn" target="_blank">Read More</a>
-                                        </div>
-                                    </article>
-                                    <article class="item">
-                                        <a href="blog-details.html" class="thumb">
-                                            <span class="full-image cover bg3" role="img"></span>
-                                        </a>
-                                        <div class="info">
-                                            <h4 class="title-text">
-                                                <a href="blog-details.html">
-                                                    Restaurants cafe Popular Recipe from Our Site
-                                                </a>
-                                            </h4>
-                                            <a href="blog-details.html" class="read-btn" target="_blank">Read More</a>
-                                        </div>
-                                    </article>
-                                    <article class="item">
-                                        <a href="blog-details.html" class="thumb">
-                                            <span class="full-image cover bg4" role="img"></span>
-                                        </a>
-                                        <div class="info">
-                                            <h4 class="title-text">
-                                                <a href="blog-details.html">
-                                                    Top 8 Ways for Living Healthy Life Important
-                                                </a>
-                                            </h4>
-                                            <a href="blog-details.html" class="read-btn" target="_blank">Read More</a>
-                                        </div>
-                                    </article>
-                                </div>
-                            </div>
+                            <?php include("includes/side-bar-detail.php") ?>
                             <div class="side-bar-widget">
                                 <h3 class="title-tag">Popular Tags</h3>
                                 <ul class="side-bar-widget-tag">
