@@ -1,7 +1,6 @@
 <?php include("api/cle_api.php");
 $obj_tous_post= recup_article();
 
-
 ?>
 
 <div class="side-bar-area pl-20">

@@ -41,12 +41,12 @@ $obj_tous_post = recup_article();
         <link rel="icon" type="image/png" href="assets/images/favicon.png" />
     </head>
     <body>
-        <div class="preloader">
+        <!-- <div class="preloader">
             <div class="spinner">
                 <div class="dot1"></div>
                 <div class="dot2"></div>
             </div>
-        </div>
+        </div> -->
 
      <?php include('includes/header.php') ?>
 
