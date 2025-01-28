@@ -188,78 +188,8 @@ $obj_tous_post = recup_article();
                     </div>
 
                     <div class="col-lg-4">
-                    <div class="side-bar-area pl-20">
-    <div class="search-widget">
-        <form class="search-form">
-            <input type="search" class="form-control" placeholder="Search..." />
-            <button type="submit">
-                <i class="bx bx-search"></i>
-            </button>
-        </form>
-    </div>
-    <div class="side-bar-categories">
-        <ul>
-        <?php foreach ($obj_tous_post as $key => $value) {
-        }  ?>
-            <li>
-                <a href="categories.html" target="_blank">
-                    Personalized Nutrition
-                    <i class="bx bx-right-arrow-alt"></i>
-                </a>
-            </li>
-
-            <li>
-                <a href="categories.html" target="_blank">
-                    Health Nutrition
-                    <i class="bx bx-right-arrow-alt"></i>
-                </a>
-            </li>
-
-            <li>
-                <a href="categories.html" target="_blank">
-                    Weight Loss Program
-                    <i class="bx bx-right-arrow-alt"></i>
-                </a>
-            </li>
-
-            <li>
-                <a href="categories.html" target="_blank">
-                    Sports Nutritionist
-                    <i class="bx bx-right-arrow-alt"></i>
-                </a>
-            </li>
-
-            <li>
-                <a href="categories.html" target="_blank">
-                    Child Nutritionist
-                    <i class="bx bx-right-arrow-alt"></i>
-                </a>
-            </li>
-
-            <li>
-                <a href="categories.html" target="_blank">
-                    Workout Program
-                    <i class="bx bx-right-arrow-alt"></i>
-                </a>
-            </li>
-
-        </ul>
-    </div>
-        <?php include("includes/side-bar.php") ?>
-    <div class="side-bar-widget">
-        <h3 class="title-tag">Popular Tags</h3>
-        <ul class="side-bar-widget-tag">
-            <li><a href="tags.html" target="_blank">Health</a></li>
-            <li><a href="tags.html" target="_blank">Food</a></li>
-            <li><a href="tags.html" target="_blank">Happy</a></li>
-            <li><a href="tags.html" target="_blank">Nutrition</a></li>
-            <li><a href="tags.html" target="_blank">Doctor</a></li>
-            <li><a href="tags.html" target="_blank">Work</a></li>
-            <li><a href="tags.html" target="_blank">Organic</a></li>
-            <li><a href="tags.html" target="_blank">Healthy</a></li>
-        </ul>
-    </div>
-</div>
+                   
+                    <?php include("includes/side-bar.php") ?>
                     </div>
 
                 </div>

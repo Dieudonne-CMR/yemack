@@ -54,29 +54,36 @@
             </li>
 
         </ul>
-    </div>
+    </div> 
 
     <div class="side-bar-widget">
 
         <h3 class="title">Recent Post</h3>
         <div class="widget-popular-post">
-        <?php foreach ($obj_tous_post as $key => $value) : ?>
+            <?php foreach ($obj_tous_post as $key => $value) : ?>
+                <?php if($key<=3):?>
+                    <style>
+                            .bg<?=$key?> {
+                                    background-image: url( "<?= $url_image . $value->photo ?>") !important;
+                            }
+                    </style>
+                        
+                    <article class="item">
 
-            <article class="item">
-
-                <a href="blog-details.html" class="thumb">
-                    <span class="full-image cover bg1" role="img"></span>
-                </a>
-                <div class="info">
-                    <h4 class="title-text">
-                        <a href="blog.detail.php?mat_art=<?=$value->matricule ?>"> 
-                        <?= $value->titre ?>
+                        <a href="blog-details.html" class="thumb">
+                            <span class="full-image cover bg<?=$key?>" role="img"></span>
                         </a>
-                    </h4>
-                    <a href="blog.detail.php?mat_art=<?=$value->matricule ?>" class="read-btn" target="_blank">Read More</a>
-                </div>
+                        <div class="info">
+                            <h4 class="title-text">
+                                <a href="blog.detail.php?mat_art=<?=$value->matricule ?>"> 
+                                <?= $value->titre ?>
+                                </a>
+                            </h4>
+                            <a href="blog.detail.php?mat_art=<?=$value->matricule ?>" class="read-btn" target="_blank">Read More</a>
+                        </div>
 
-            </article>
+                    </article>
+                <?php else: break; endif; ?>
             <?php endforeach ?>
 
             <!-- <article class="item">

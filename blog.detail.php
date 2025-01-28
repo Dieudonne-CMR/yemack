@@ -1,11 +1,8 @@
 <?php
 include('api/cle_api.php');
-$obj_tous_post= recup_article();
-// var_dump($obj_tous_post);
 if (isset($_GET['mat_art']) AND !empty($_GET['mat_art'])) {
     $mat_post=$_GET['mat_art'];
     $detail_post = recup_detail_post($mat_post);
-    var_dump($detail_post);
     if(!empty($detail_post)):
         $titre= $detail_post->titre; 
         $image= $detail_post->photo;
@@ -72,7 +69,8 @@ if (isset($_GET['mat_art']) AND !empty($_GET['mat_art'])) {
                 <div class="dot2"></div>
             </div>
         </div>
-            <?php  include("includes/headerdetail.php") ?>
+
+        <?php  include("includes/headerdetail.php") ?>
 
         <div class="inner-banner inner-bg3">
             <div class="container">
@@ -91,243 +89,157 @@ if (isset($_GET['mat_art']) AND !empty($_GET['mat_art'])) {
         <div class="blog-details-area pt-100 pb-70">
             <div class="container">
                 <div class="row">
-                    <?php foreach ($detail_post as $key => $value) : ?>
-                      <div class="col-lg-8">
-                           <div class="blog-details-content">
-                               <div class="blog-preview-img">
-                                   <img src=<?php echo $url_image . $value->photo ?>  alt="Blog Images" /> 
-                               </div>
-                               <ul class="tag-list">
-                                   <li class="active">
-                                       <a href="author.html"> <i class="bx bx-user"></i> <?php echo $hauteur  ?></a>
-                                   </li>
-                                   <li><i class="bx bx-calendar"></i> <?=data_date($value->date) ?></li>
-                                   <li><i class="bx bx-comment-dots"></i> 3 Comments</li>
-                               </ul>
-                               <h2> <?php echo $value->titre ?> </h2>
-                               <p>
-                                   <?php echo $value->content ?>
-                               </p> 
-                               <!-- <p>
-                                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan
-                                   lacus vel facilisis. Lorem Ipsum is simply dummy text of the printing and typesetting
-                               </p>
-                               <blockquote class="blockquote">
-                                   <p>
-                                       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan
-                                       lacus vel facilisis.
-                                   </p>
-                                   <i class="bx bxs-quote-right"></i>
-                               </blockquote>
-                               <div class="blog-article-content">
-                                   <h3>Health & Nutrition Strategies</h3>
-                                   <p>
-                                       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan
-                                       lacus vel facilisis. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since.
-                                   </p>
-                                   <ul>
-                                       <li>At vero eos et accusam et justo duo dolores et ea rebum.</li>
-                                       <li>Eirmod tempor invidunt ut labore et dolore magna</li>
-                                       <li>Stet clita kasd gubergren, no sea takimata sanctus.</li>
-                                   </ul>
-                               </div>
-                               <div class="article-share">
-                                   <div class="row align-items-center">
-                                       <div class="col-lg-5 col-md-5">
-                                           <div class="article-tag">
-                                               <ul>
-                                                   <li class="title">Tags :</li>
-                                                   <li><a href="blog-details.html" target="_blank">Health,</a></li>
-                                                   <li><a href="blog-details.html" target="_blank">Food,</a></li>
-                                                   <li><a href="blog-details.html" target="_blank">Nutrition</a></li>
-                                               </ul>
-                                           </div>
-                                       </div>
-                                       <div class="col-lg-7 col-md-7">
-                                           <div class="article-social-icon">
-                                               <ul class="social-icon">
-                                                   <li class="title">Share :</li>
-                                                   <li>
-                                                       <a href="https://www.facebook.com/" target="_blank">
-                                                           <i class="bx bxl-facebook"></i>
-                                                       </a>
-                                                   </li>
-                                                   <li>
-                                                       <a href="https://www.linkedin.com/" target="_blank">
-                                                           <i class="bx bxl-linkedin"></i>
-                                                       </a>
-                                                   </li>
-                                                   <li>
-                                                       <a href="https://twitter.com/" target="_blank">
-                                                           <i class="bx bxl-twitter"></i>
-                                                       </a>
-                                                   </li>
-                                                   <li>
-                                                       <a href="https://www.instagram.com/" target="_blank">
-                                                           <i class="bx bxl-instagram"></i>
-                                                       </a>
-                                                   </li>
-                                               </ul>
-                                           </div>
-                                       </div>
-                                   </div>
-                               </div>
-                               
-                               <div class="comments-wrap">
-                                   <div class="comment-title">
-                                       <h4>3 Comments :</h4>
-                                   </div>
-                                   <ul class="comment-form">
-                                       <li>
-                                           <img src="assets/images/blog/blog-user.jpg" alt="Image" />
-                                           <h3>Ardin Hajack</h3>
-                                           <span>17 April , 2021 AT 06:30 PM</span>
-                                           <p>
-                                               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidu astana glory makes one of duo dolores et ea rebum stet clita kasd gubergren, no sea takimata sanctus
-                                               est.
-                                           </p>
-                                           <a href="blog-details.html"> Reply</a>
-                                       </li>
-                                       <li class="pl-80">
-                                           <img src="assets/images/blog/blog-user2.jpg" alt="Image" />
-                                           <h3>Lisa Mera</h3>
-                                           <span>17 April , 2021 AT 06:30 PM</span>
-                                           <p>
-                                               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas
-                                               accumsan lacus vel facilisis.
-                                           </p>
-                                           <a href="blog-details.html"> Reply</a>
-                                       </li>
-                                       <li>
-                                           <img src="assets/images/blog/blog-user3.jpg" alt="Image" />
-                                           <h3>John Smith</h3>
-                                           <span>17 April , 2021 AT 06:30 PM</span>
-                                           <p>
-                                               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidu astana glory makes one of duo dolores et ea rebum stet clita kasd gubergren, no sea takimata sanctus
-                                               est.
-                                           </p>
-                                           <a href="blog-details.html"> Reply</a>
-                                       </li>
-                                   </ul>
-                               </div>
-                               <div class="comments-form">
-                                   <div class="contact-form">
-                                       <h4>Leave A Reply</h4>
-                                       <form id="contactForm">
-                                           <div class="row">
-                                               <div class="col-lg-6 col-sm-6">
-                                                   <div class="form-group">
-                                                       <label>Your Name*</label>
-                                                       <input type="text" name="name" id="name" class="form-control" required data-error="Please enter your name" placeholder="Your Name" />
-                                                   </div>
-                                               </div>
-                                               <div class="col-lg-6 col-sm-6">
-                                                   <div class="form-group">
-                                                       <label>Your Email Address*</label>
-                                                       <input type="email" name="email" id="email" class="form-control" required data-error="Please enter your email" placeholder="Your Email" />
-                                                   </div>
-                                               </div>
-                                               <div class="col-lg-12 col-sm-12">
-                                                   <div class="form-group">
-                                                       <label>Your Website Link*</label>
-                                                       <input type="text" name="website" class="form-control" required data-error="Your website" placeholder="Your Website" />
-                                                   </div>
-                                               </div>
-                                               <div class="col-lg-12 col-md-12">
-                                                   <div class="form-group">
-                                                       <label>Comment*</label>
-                                                       <textarea name="message" class="form-control" id="message" cols="30" rows="8" required data-error="Write your message" placeholder="Your Message.."></textarea>
-                                                   </div>
-                                               </div>
-                                               <div class="col-lg-12 col-md-12">
-                                                   <div class="agree-label">
-                                                       <input type="checkbox" id="chb1" />
-                                                       <label for="chb1">
-                                                           Save my name, email, and website in this browser for the next time I comment.
-                                                       </label>
-                                                   </div>
-                                               </div>
-                                               <div class="col-lg-12 col-md-12">
-                                                   <button type="submit" class="default-btn">
-                                                       Post A Comment
-                                                   </button>
-                                               </div>
-                                           </div>
-                                       </form>
-                                   </div>
-                               </div>  -->
-                           </div>
-                       </div>
-                    <?php endforeach ?>
+                    <div class="col-lg-8">
+                        <div class="blog-details-content">
+                            <div class="blog-preview-img">
+                                <img src="assets/images/blog/blog-details.jpg" alt="Blog Images" />
+                            </div>
+                            <ul class="tag-list">
+                                <li class="active">
+                                    <a href="author.html"> <i class="bx bx-user"></i>By John </a>
+                                </li>
+                                <li><i class="bx bx-calendar"></i> 16 April</li>
+                                <li><i class="bx bx-comment-dots"></i> 3 Comments</li>
+                            </ul>
+                            <h2>7 health tips For your body how to keep fit?</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan
+                                lacus vel facilisis. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                                galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, electronic.
+                            </p>
+
+                           
+                            <div class="article-share">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-5 col-md-5">
+                                        <div class="article-tag">
+                                            <ul>
+                                                <li class="title">Tags :</li>
+                                                <li><a href="blog-details.html" target="_blank">Health,</a></li>
+                                                <li><a href="blog-details.html" target="_blank">Food,</a></li>
+                                                <li><a href="blog-details.html" target="_blank">Nutrition</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 col-md-7">
+                                        <div class="article-social-icon">
+                                            <ul class="social-icon">
+                                                <li class="title">Share :</li>
+                                                <li>
+                                                    <a href="https://www.facebook.com/" target="_blank">
+                                                        <i class="bx bxl-facebook"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://www.linkedin.com/" target="_blank">
+                                                        <i class="bx bxl-linkedin"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://twitter.com/" target="_blank">
+                                                        <i class="bx bxl-twitter"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://www.instagram.com/" target="_blank">
+                                                        <i class="bx bxl-instagram"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <?php /*<div class="comments-wrap">
+                                <div class="comment-title">
+                                    <h4>3 Comments :</h4>
+                                </div>
+                                <ul class="comment-form">
+                                    <li>
+                                        <img src="assets/images/blog/blog-user.jpg" alt="Image" />
+                                        <h3>Ardin Hajack</h3>
+                                        <span>17 April , 2021 AT 06:30 PM</span>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidu astana glory makes one of duo dolores et ea rebum stet clita kasd gubergren, no sea takimata sanctus
+                                            est.
+                                        </p>
+                                        <a href="blog-details.html"> Reply</a>
+                                    </li>
+                                    <li class="pl-80">
+                                        <img src="assets/images/blog/blog-user2.jpg" alt="Image" />
+                                        <h3>Lisa Mera</h3>
+                                        <span>17 April , 2021 AT 06:30 PM</span>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas
+                                            accumsan lacus vel facilisis.
+                                        </p>
+                                        <a href="blog-details.html"> Reply</a>
+                                    </li>
+                                    <li>
+                                        <img src="assets/images/blog/blog-user3.jpg" alt="Image" />
+                                        <h3>John Smith</h3>
+                                        <span>17 April , 2021 AT 06:30 PM</span>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidu astana glory makes one of duo dolores et ea rebum stet clita kasd gubergren, no sea takimata sanctus
+                                            est.
+                                        </p>
+                                        <a href="blog-details.html"> Reply</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="comments-form">
+                                <div class="contact-form">
+                                    <h4>Leave A Reply</h4>
+                                    <form id="contactForm">
+                                        <div class="row">
+                                            <div class="col-lg-6 col-sm-6">
+                                                <div class="form-group">
+                                                    <label>Your Name*</label>
+                                                    <input type="text" name="name" id="name" class="form-control" required data-error="Please enter your name" placeholder="Your Name" />
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-sm-6">
+                                                <div class="form-group">
+                                                    <label>Your Email Address*</label>
+                                                    <input type="email" name="email" id="email" class="form-control" required data-error="Please enter your email" placeholder="Your Email" />
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12 col-sm-12">
+                                                <div class="form-group">
+                                                    <label>Your Website Link*</label>
+                                                    <input type="text" name="website" class="form-control" required data-error="Your website" placeholder="Your Website" />
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12">
+                                                <div class="form-group">
+                                                    <label>Comment*</label>
+                                                    <textarea name="message" class="form-control" id="message" cols="30" rows="8" required data-error="Write your message" placeholder="Your Message.."></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12">
+                                                <div class="agree-label">
+                                                    <input type="checkbox" id="chb1" />
+                                                    <label for="chb1">
+                                                        Save my name, email, and website in this browser for the next time I comment.
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12">
+                                                <button type="submit" class="default-btn">
+                                                    Post A Comment
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div> */?>
+                        </div>
+                    </div>
 
                     <div class="col-lg-4">
 
-                        <div class="side-bar-area pl-20">
-                            <div class="search-widget">
-                                <form class="search-form">
-                                    <input type="search" class="form-control" placeholder="Search..." />
-                                    <button type="submit">
-                                        <i class="bx bx-search"></i>
-                                    </button>
-                                </form>
-                            </div>
-                            <div class="side-bar-categories">
-                                <?php foreach ($obj_tous_post as $key => $value) : ?>
-                                <ul>
-                                    <li>
-                                        <a href="categories.html" target="_blank">
-                                            <?php echo $nom_de_categorie ?>
-                                            <i class="bx bx-right-arrow-alt"></i>
-                                        </a>
-                                    </li>
-                                    <!-- <li>
-                                        <a href="categories.html" target="_blank">
-                                            Health Nutrition
-                                            <i class="bx bx-right-arrow-alt"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="categories.html" target="_blank">
-                                            Weight Loss Program
-                                            <i class="bx bx-right-arrow-alt"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="categories.html" target="_blank">
-                                            Sports Nutritionist
-                                            <i class="bx bx-right-arrow-alt"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="categories.html" target="_blank">
-                                            Child Nutritionist
-                                            <i class="bx bx-right-arrow-alt"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="categories.html" target="_blank">
-                                            Workout Program
-                                            <i class="bx bx-right-arrow-alt"></i>
-                                        </a>
-                                    </li> -->
-                                </ul>
-                                <?php endforeach ?>
-                            </div>
-                            <?php include("includes/side-bar-detail.php") ?>
-                            <div class="side-bar-widget">
-                                <h3 class="title-tag">Popular Tags</h3>
-                                <ul class="side-bar-widget-tag">
-                                    <li><a href="tags.html" target="_blank">Health</a></li>
-                                    <li><a href="tags.html" target="_blank">Food</a></li>
-                                    <li><a href="tags.html" target="_blank">Happy</a></li>
-                                    <li><a href="tags.html" target="_blank">Nutrition</a></li>
-                                    <li><a href="tags.html" target="_blank">Doctor</a></li>
-                                    <li><a href="tags.html" target="_blank">Work</a></li>
-                                    <li><a href="tags.html" target="_blank">Organic</a></li>
-                                    <li><a href="tags.html" target="_blank">Healthy</a></li>
-                                </ul>
-                            </div>
-                        </div>
+                        <?php include("includes/side-bar.php") ?>
 
                     </div>
                 </div>
