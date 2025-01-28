@@ -1,6 +1,8 @@
 <?php 
 include('api/cle_api.php');
-$obj_tous_post = recup_article();
+// $obj_tous_post = recup_article();
+$category = recup_category();
+// var_dump($category)
 // var_dump($obj_tous_post);
 ?>
 <!DOCTYPE html>
@@ -55,13 +57,11 @@ $obj_tous_post = recup_article();
         <div class="inner-banner inner-bg6">
             <div class="container">
                 <div class="inner-title text-center">
-                    <h3>Blog Right Sidebar</h3>
-                    <ul>
-                        <li>
-                            <a href="index.html">Home</a>
-                        </li>
-                        <li>Blog Right Sidebar</li>
-                    </ul>
+                <?php foreach ($category as $key => $value) : ?>
+                    <h3><?php echo "Bienvenue chez $value->nom" ?></h3>
+                 <?php endforeach ?>
+                    
+                    
                 </div>
             </div>
         </div>
