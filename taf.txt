@@ -1,3 +1,13 @@
-- travailler le header
+# taf: 27/01/2025
+-travailler le header
 -travailler la side-bar ( afficher les articles)
 - travailler la page detaille article.
+
+#Taf 29/01/2025
+- travailler la page shop.php
+- travailler la page shop-details.php
+
+#Taf 03/02/2025
+- Ajouter le header dans la page shop.php et shop-details
+- Afficher les produit dans la page shop 
+- Afficher le detail d'un produit dans la pag shop-detail.php

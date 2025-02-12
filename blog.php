@@ -1,6 +1,8 @@
 <?php 
 include('api/cle_api.php');
-$obj_tous_post = recup_article();
+// $obj_tous_post = recup_article();
+$category = recup_category();
+// var_dump($category)
 // var_dump($obj_tous_post);
 ?>
 <!DOCTYPE html>
@@ -41,12 +43,12 @@ $obj_tous_post = recup_article();
         <link rel="icon" type="image/png" href="assets/images/favicon.png" />
     </head>
     <body>
-        <div class="preloader">
+        <!-- <div class="preloader">
             <div class="spinner">
                 <div class="dot1"></div>
                 <div class="dot2"></div>
             </div>
-        </div>
+        </div> -->
 
      <?php include('includes/header.php') ?>
 
@@ -55,13 +57,11 @@ $obj_tous_post = recup_article();
         <div class="inner-banner inner-bg6">
             <div class="container">
                 <div class="inner-title text-center">
-                    <h3>Blog Right Sidebar</h3>
-                    <ul>
-                        <li>
-                            <a href="index.html">Home</a>
-                        </li>
-                        <li>Blog Right Sidebar</li>
-                    </ul>
+                <?php foreach ($category as $key => $value) : ?>
+                    <h3><?php echo "Bienvenue chez $value->nom" ?></h3>
+                 <?php endforeach ?>
+                    
+                    
                 </div>
             </div>
         </div>
@@ -72,7 +72,7 @@ $obj_tous_post = recup_article();
 
                     <div class="col-lg-8">
                         <div class="row justify-content-center">
-                            <?php foreach($obj_tous_post as $key=>$value) :?>
+                            <?php foreach($obj_tous_post as $key=>$value) : ?>
                                 <div class="col-lg-6 col-md-6">
                                     <div class="blog-item">
                                         <a href="blog-details.html">
@@ -188,7 +188,8 @@ $obj_tous_post = recup_article();
                     </div>
 
                     <div class="col-lg-4">
-                        <?php include("includes/side-bar.php")?>
+                   
+                    <?php include("includes/side-bar.php") ?>
                     </div>
 
                 </div>
