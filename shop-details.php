@@ -37,12 +37,12 @@
         <link rel="icon" type="image/png" href="assets/images/favicon.png" />
     </head>
     <body>
-        <div class="preloader">
+        <!-- <div class="preloader">
             <div class="spinner">
                 <div class="dot1"></div>
                 <div class="dot2"></div>
             </div>
-        </div>
+        </div> -->
           <?php /*   <header class="top-header top-header-bg-two">
             <div class="container">
                 <div class="row align-items-center">
@@ -424,27 +424,26 @@
         <div class="shop-details-area pt-100 pb-70">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-6 col-md-12">
-                        <div class="shop-details-img">
-                            <img src="assets/images/product-img/product-details.png" alt="Image" />
-                        </div>
-                    </div>
-                    <?php
-                    $url= " ";
-                    if(isset($_GET['url'])){
-                        $url= explode('=', $_GET['url']);
+                <?php
+                    url()= " ";
+                    if(isset($_GET['mat_article'])){
+                        $mat= $_GET['mat_article'];
                     }
-                    $mat=$url['0'];
-                    $produit=recup_produict();
-                    foreach($produit as $product) :
-                        if($product->mat_article == $mat){
+                    $product=recup_produict_detail($mat);
+                    // var_dump($_GET['url']);
+                    foreach($product as $produit) {
                     ?>
                     <div class="col-lg-6 col-md-12">
+                        <div class="shop-details-img">
+                            <img src="<?=$image_produit.$produit->lien_img_vedette?>" alt="Image" />
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
                         <div class="shop-desc pl-20">
-                            <h3><?= $product->nom_art?></h3>
+                            <h3><?= $produit->nom_art?></h3>
                             <div class="price">
-                                <span class="new-price"><?=$product->prix_reel?></span>
-                                <span class="old-price">$140.00</span>
+                                <span class="new-price"><?=$produit->prix_reel?></span>
+                                <span class="old-price"><?=$produit->prix_fictif?></span>
                             </div>
                             <div class="shop-review">
                                 <div class="rating">
@@ -454,11 +453,11 @@
                                     <i class="bx bxs-star"></i>
                                     <i class="bx bxs-star-half"></i>
                                 </div>
-                                <a href="shop-details.html" class="rating-count">3 commentaires</a>
+                                <a href="shop-details.php?mat_article=<?=$produit->mat_article?>" class="rating-count">3 commentaires</a>
                             </div>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.
-                            </p>
+                                <?=$produit->courte_description?>
+                             </p>
                             <div class="input-count-area">
                                 <h3>Quantité</h3>
                                 <div class="input-counter">
@@ -470,31 +469,31 @@
                             <div class="shop-add">
                                 <button type="submit" class="default-btn"><i class="fas fa-cart-plus"></i> Acheter maintenant!</button>
                                 <button type="submit" class="default-btn"><i class="fas fa-cart-plus"></i> Ajouter au panier</button>
-                            </div>
+                            </div>              
                             <div class="shop-share">
                                 <ul>
                                     <li>
                                         <span>Partager:</span>
                                     </li>
                                     <li>
-                                        <a href="https://www.facebook.com/" target="_blank">
+                                      <a href="https://www.facebook.com/sharer/sharer.php?u=<?=url()?>" target="_blank">
                                             <i class="bx bxl-facebook"></i>
-                                        </a>
+                                      </a>
                                     </li>
                                     <li>
-                                        <a href="https://www.linkedin.com/" target="_blank">
+                                      <a href="https://www.linkedin.com/shareArticle?mini=true&url=<?=url()?>&title=Visitez le site de vente de produits naturels&summary=resumme&source=akila" target="_blank">
                                             <i class="bx bxl-linkedin"></i>
-                                        </a>
+                                      </a>
                                     </li>
                                     <li>
-                                        <a href="https://twitter.com/" target="_blank">
+                                      <a href="https://twitter.com/intent/tweet?text=Texte%20à%20partager&url=<?=url()?>" target="_blank">
                                             <i class="bx bxl-twitter"></i>
-                                        </a>
+                                      </a>
                                     </li>
                                     <li>
-                                        <a href="https://www.instagram.com/" target="_blank">
+                                      <a href="https://www.instagram.com/share?url=<?=url()?>" target="_blank">
                                             <i class="bx bxl-instagram"></i>
-                                        </a>
+                                      </a>
                                     </li>
                                 </ul>
                             </div>
@@ -503,7 +502,7 @@
                 </div>
             </div>
         </div>
-
+     
         <div class="shop-details-tab-area pb-70">
             <div class="container">
                 <div class="tab shop-detls-tab">
@@ -526,10 +525,7 @@
                                 <div class="tabs_item current">
                                     <div class="shop-detls-tab-content">
                                         <p>
-                                            Design inspiration lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque, id pulvinar odio lorem non turpis. Nullam sit amet
-                                            enim. Suspendisse id velit vitae ligula volutpat condimentum. Aliquam erat volutpat. Sed quis velit. Nulla facilisi. Nulla libero. Vivamus pharetra posuere sapien. Nam consectetuer. Sed aliquam,
-                                            nunc eget euismod ullamcorper, lectus nunc ullamcorper orci, fermentum bibendum enim nibh eget ipsum. Nam consectetuer. Sed aliquam, nunc eget euismod ullamcorper, lectus nunc ullamcorper orci,
-                                            fermentum bibendum enim nibh eget ipsum.
+                                           <?=$produit->description?>
                                         </p>
                                     </div>
                                 </div>
@@ -672,16 +668,23 @@
                 </div>
             </div>
         </div>
-
+     <?php 
+     }
+     ?>
         <div class="product-area pb-70">
             <div class="container">
                 <h3 class="top-title">Les produits les plus vendus</h3>
                 <div class="row justify-content-center">
+             <?php
+                $productt=recup_produict();
+                foreach($productt as $key=>$produitt){
+                if($key<4){
+             ?>    
                     <div class="col-lg-3 col-sm-6">
                         <div class="product-card">
                             <div class="product-img">
-                                <a href="shop-details.html">
-                                    <img src="assets/images/product-img/product-img1.png" alt="Product Images" />
+                                <a href="shop-details.php?mat_article=<?=$produitt->mat_article?>">
+                                <img src="<?=$image_produit.$produitt->lien_img_vedette?>" alt="Product Images" />
                                 </a>
                                 <ul class="product-item-action">
                                     <li>
@@ -693,8 +696,8 @@
                                 </ul>
                             </div>
                             <div class="content">
-                                <h3><a href="shop-details.html">Citron</a></h3>
-                                <span>$50.00</span>
+                                <h3><a href="shop-details.php?mat_article=<?=$produitt->mat_article?>"><?=$produitt->nom_art?></a></h3>
+                                <span><?=$produitt->prix_reel."FCFA"?></span>
                                 <div class="rating">
                                     <i class="bx bxs-star"></i>
                                     <i class="bx bxs-star"></i>
@@ -705,6 +708,14 @@
                             </div>
                         </div>
                     </div>
+             <?php 
+                }
+                else{
+                    break;
+                }
+            }
+             ?>
+                  <?php /*
                     <div class="col-lg-3 col-sm-6">
                         <div class="product-card">
                             <div class="product-img">
@@ -789,11 +800,12 @@
                             </div>
                         </div>
                     </div>
+             */?>
                 </div>
             </div>
         </div>
 
-        <footer class="footer-area footer-area-bg">
+        <footer class="footer-area footer-area-bg"> 
             <div class="container">
                 <div class="footer-top pt-100 pb-70">
                     <div class="row">
@@ -929,9 +941,9 @@
                     </div>
                 </div>
             </div>
-        </footer>
+          </footer> 
 
-        <div class="modal fade fade-scale searchmodal" id="searchmodal" tabindex="-1" role="dialog">
+          <div class="modal fade fade-scale searchmodal" id="searchmodal" tabindex="-1" role="dialog"> 
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -947,8 +959,10 @@
                     </div>
                 </div>
             </div>
-        </div>
-
+         </div> 
+        <?php 
+        // include "includes/footer.php";
+        ?>
         <script src="assets/js/jquery.min.js"></script>
 
         <script src="assets/js/bootstrap.bundle.min.js"></script>
