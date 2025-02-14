@@ -451,41 +451,14 @@
                         <div class="row">
                         <?php
                         $products = recup_produict();
-                       var_dump($)
-                            ?>
-                           <?php /*
+                        foreach($products as $key => $product) :
+                            if($key<6){
+                        // var_dump($product->lien_img_vedette);
+                            ?>                          
                             <div class="col-lg-4 col-sm-6">
                                 <div class="product-card">
                                     <div class="product-img">
-                                        <a href="shop-details.php">
-                                            <img src="assets/images/product-img/product-img2.png" alt="Product Images" />
-                                        </a>
-                                        <ul class="product-item-action">
-                                            <li>
-                                                <a href="wishlist.php"><i class="bx bx-heart"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="cart.php"><i class="bx bx-cart"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="content">
-                                        <h3><a href="shop-details.php">Pomme</a></h3>
-                                        <span>$30.00</span>
-                                        <div class="rating">
-                                            <i class="bx bxs-star"></i>
-                                            <i class="bx bxs-star"></i>
-                                            <i class="bx bxs-star"></i>
-                                            <i class="bx bxs-star"></i>
-                                            <i class="bx bxs-star"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>                           
-                            <div class="col-lg-4 col-sm-6">
-                                <div class="product-card">
-                                    <div class="product-img">
-                                        <a href="shop-details.php">
+                                        <a href="shop-details.php?mat_article=<?=$product->mat_article?>">
                                             <img src="assets/images/product-img/product-img3.png" alt="Product Images" />
                                         </a>
                                         <ul class="product-item-action">
@@ -498,7 +471,44 @@
                                         </ul>
                                     </div>
                                     <div class="content">
-                                        <h3><a href="shop-details.php">Avocat</a></h3>
+                                        <h3><a href="shop-details.php?mat_article=<?=$product->mat_article?>"><?= $product->nom_art?></a></h3>
+                                        <span><?= $product->prix_reel."FCFA"?></span>
+                                        <div class="rating">
+                                            <i class="bx bxs-star"></i>
+                                            <i class="bx bxs-star"></i>
+                                            <i class="bx bxs-star"></i>
+                                            <i class="bx bxs-star"></i>
+                                            <i class="bx bxs-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                        <?php 
+                            }
+                        else{
+                            break;
+                         }
+                        endforeach;
+                    
+                        ?>
+                            <?php /*                          
+                            <div class="col-lg-4 col-sm-6">
+                                <div class="product-card">
+                                    <div class="product-img">
+                                        <a href="shop-details.php?mat_article=<?=$product->mat_article?>">
+                                            <img src="assets/images/product-img/product-img3.png" alt="Product Images" />
+                                        </a>
+                                        <ul class="product-item-action">
+                                            <li>
+                                                <a href="wishlist.php"><i class="bx bx-heart"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="cart.php"><i class="bx bx-cart"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="content">
+                                        <h3><a href="shop-details.php?mat_article=<?=$product->mat_article?>">Avocat</a></h3>
                                         <span>$60.00</span>
                                         <div class="rating">
                                             <i class="bx bxs-star"></i>
@@ -513,7 +523,7 @@
                             <div class="col-lg-4 col-sm-6">
                                 <div class="product-card">
                                     <div class="product-img">
-                                        <a href="shop-details.php">
+                                        <a href="shop-details.php?mat_article=<?=$product->mat_article?>">
                                             <img src="assets/images/product-img/product-img4.png" alt="Product Images" />
                                         </a>
                                         <ul class="product-item-action">
@@ -526,7 +536,7 @@
                                         </ul>
                                     </div>
                                     <div class="content">
-                                        <h3><a href="shop-details.php">Pastèque</a></h3>
+                                        <h3><a href="shop-details.php?mat_article=<?=$product->mat_article?>">Pastèque</a></h3>
                                         <span>$20.00</span>
                                         <div class="rating">
                                             <i class="bx bxs-star"></i>
@@ -541,7 +551,7 @@
                             <div class="col-lg-4 col-sm-6">
                                 <div class="product-card">
                                     <div class="product-img">
-                                        <a href="shop-details.php">
+                                        <a href="shop-details.php?mat_article=<?=$product->mat_article?>">
                                             <img src="assets/images/product-img/product-img5.png" alt="Product Images" />
                                         </a>
                                         <ul class="product-item-action">
@@ -554,7 +564,7 @@
                                         </ul>
                                     </div>
                                     <div class="content">
-                                        <h3><a href="shop-details.php">Grenade</a></h3>
+                                        <h3><a href="shop-details.php?mat_article=<?=$product->mat_article?>">Grenade</a></h3>
                                         <span>$40.00</span>
                                         <div class="rating">
                                             <i class="bx bxs-star"></i>
@@ -569,7 +579,7 @@
                             <div class="col-lg-4 col-sm-6">
                                 <div class="product-card">
                                     <div class="product-img">
-                                        <a href="shop-details.php">
+                                        <a href="shop-details.php?mat_article=<?=$product->mat_article?>">
                                             <img src="assets/images/product-img/product-img6.png" alt="Product Images" />
                                         </a>
                                         <ul class="product-item-action">
@@ -582,7 +592,7 @@
                                         </ul>
                                     </div>
                                     <div class="content">
-                                        <h3><a href="shop-details.php">poivron</a></h3>
+                                        <h3><a href="shop-details.php?mat_article=<?=$product->mat_article?>">poivron</a></h3>
                                         <span>$70.00</span>
                                         <div class="rating">
                                             <i class="bx bxs-star"></i>

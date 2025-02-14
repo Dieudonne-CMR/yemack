@@ -1,3 +1,4 @@
+<?php include "api_shops/cle_api_shop.php"; ?>
 <!DOCTYPE html>
 <html lang="zxx">
     <!-- Mirrored from templates.hibootstrap.com/arrola/default/shop-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 18 Feb 2023 17:10:41 GMT -->
@@ -409,12 +410,12 @@
         <div class="inner-banner inner-bg10">
             <div class="container">
                 <div class="inner-title text-center">
-                    <h3>Détails de la boutique</h3>
+                    <h3>Détails du produit</h3>
                     <ul>
                         <li>
                             <a href="index.html">Accueil</a>
                         </li>
-                        <li>Détails de la boutique</li>
+                        <li>Détails du produit</li>
                     </ul>
                 </div>
             </div>
@@ -428,11 +429,21 @@
                             <img src="assets/images/product-img/product-details.png" alt="Image" />
                         </div>
                     </div>
+                    <?php
+                    $url= " ";
+                    if(isset($_GET['url'])){
+                        $url= explode('=', $_GET['url']);
+                    }
+                    $mat=$url['0'];
+                    $produit=recup_produict();
+                    foreach($produit as $product) :
+                        if($product->mat_article == $mat){
+                    ?>
                     <div class="col-lg-6 col-md-12">
                         <div class="shop-desc pl-20">
-                            <h3>Pomme fraîche</h3>
+                            <h3><?= $product->nom_art?></h3>
                             <div class="price">
-                                <span class="new-price">$135.00</span>
+                                <span class="new-price"><?=$product->prix_reel?></span>
                                 <span class="old-price">$140.00</span>
                             </div>
                             <div class="shop-review">
