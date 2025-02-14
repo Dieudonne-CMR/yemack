@@ -1,6 +1,7 @@
+<?php include "api_shops/cle_api_shop.php"; ?>
 <!DOCTYPE html>
 <html lang="zxx">
-    <!-- Mirrored from templates.hibootstrap.com/arrola/default/shop.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 18 Feb 2023 17:10:41 GMT -->
+    <!-- Mirrored from templates.hibootstrap.com/arrola/default/shop.php by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 18 Feb 2023 17:10:41 GMT -->
     <head>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -31,31 +32,31 @@
 
         <link rel="stylesheet" href="assets/css/theme-dark.css" />
 
-        <title>Arrola - Nutrition & Recipe HTML Template</title>
+        <title>Arrola - Modèle HTML de nutrition et de recettes</title>
 
         <link rel="icon" type="image/png" href="assets/images/favicon.png" />
     </head>
     <body>
-        <div class="preloader">
+    <?php /*<div class="preloader"> -->
             <div class="spinner">
                 <div class="dot1"></div>
                 <div class="dot2"></div>
             </div>
-        </div>
-
-        <header class="top-header top-header-bg-two">
+        </div> */
+      ?>
+         <?php /* <header class="top-header top-header-bg-two">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-3 col-md-4">
                         <div class="header-left">
-                            <p>Welcome To Arrola Health!</p>
+                            <p>Bienvenue chez Arrola Santé !</p>
                         </div>
                     </div>
                     <div class="col-lg-9 col-md-8">
                         <div class="header-right d-flex align-items-center">
                             <div class="header-item">
                                 <ul>
-                                    <li class="title">Follow us :</li>
+                                    <li class="title">Suivez-nous :</li>
                                     <li>
                                         <a href="https://www.facebook.com/" target="_blank">
                                             <i class="bx bxl-facebook"></i>
@@ -79,7 +80,7 @@
                                 </ul>
                             </div>
                             <div class="header-item">
-                                <a href="cart.html" class="cart-top-btn">
+                                <a href="cart.php" class="cart-top-btn">
                                     <i class="bx bx-shopping-bag"></i>
                                     <span>0</span>
                                 </a>
@@ -110,14 +111,14 @@
                     </div>
                 </div>
             </div>
-        </header>
+        </header> */?>
 
-        <div class="navbar-area">
+         <?php /* <div class="navbar-area">
             <div class="mobile-responsive-nav">
                 <div class="container">
                     <div class="mobile-responsive-menu">
                         <div class="logo">
-                            <a href="index.html">
+                            <a href="index.php">
                                 <img src="assets/images/logo.png" class="logo-one" alt="Logo" />
                                 <img src="assets/images/logo-white.png" class="logo-two" alt="Logo" />
                             </a>
@@ -129,7 +130,7 @@
             <div class="desktop-nav nav-area">
                 <div class="container">
                     <nav class="navbar navbar-expand-md navbar-light">
-                        <a class="navbar-brand" href="index.html">
+                        <a class="navbar-brand" href="index.php">
                             <img src="assets/images/logo.png" class="logo-one" alt="Logo" />
                             <img src="assets/images/logo-white.png" class="logo-two" alt="Logo" />
                         </a>
@@ -137,23 +138,23 @@
                             <ul class="navbar-nav m-auto">
                                 <li class="nav-item">
                                     <a href="#" class="nav-link">
-                                        Home
+                                    Acceuil
                                         <i class="bx bx-chevron-down"></i>
                                     </a>
                                     <ul class="dropdown-menu">
                                         <li class="nav-item">
-                                            <a href="index.html" class="nav-link">
-                                                Home One
+                                            <a href="index.php" class="nav-link">
+                                            Acceuil Un
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="index-2.html" class="nav-link">
-                                                Home Two
+                                            <a href="index-2.php" class="nav-link">
+                                            Acceuil Deux
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="index-3.html" class="nav-link">
-                                                Home Three
+                                            <a href="index-3.php" class="nav-link">
+                                            Acceuil Trois
                                             </a>
                                         </li>
                                     </ul>
@@ -165,23 +166,23 @@
                                     </a>
                                     <ul class="dropdown-menu">
                                         <li class="nav-item">
-                                            <a href="about.html" class="nav-link">
-                                                About Us
+                                            <a href="about.php" class="nav-link">
+                                            À propos de nous
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="team.html" class="nav-link">
-                                                Team
+                                            <a href="team.php" class="nav-link">
+                                            Équipe
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="testimonials.html" class="nav-link">
-                                                Testimonials
+                                            <a href="testimonials.php" class="nav-link">
+                                            Témoignages
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="nutritionist.html" class="nav-link">
-                                                Nutritionist
+                                            <a href="nutritionist.php" class="nav-link">
+                                            Nutritionniste
                                             </a>
                                         </li>
                                         <li class="nav-item">
@@ -191,115 +192,115 @@
                                             </a>
                                             <ul class="dropdown-menu">
                                                 <li class="nav-item">
-                                                    <a href="portfolio.html" class="nav-link">
+                                                    <a href="portfolio.php" class="nav-link">
                                                         Portfolio
                                                     </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="portfolio-details.html" class="nav-link">
-                                                        Portfolio Details
+                                                    <a href="portfolio-details.php" class="nav-link">
+                                                    Details Portfolio
                                                     </a>
                                                 </li>
                                             </ul>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="appointment.html" class="nav-link">
-                                                Appointment
+                                            <a href="appointment.php" class="nav-link">
+                                            Rendez-vous
                                             </a>
                                         </li>
                                         <li class="nav-item">
                                             <a href="#" class="nav-link">
-                                                Recipe
+                                            Recette
                                                 <i class="bx bx-chevron-down"></i>
                                             </a>
                                             <ul class="dropdown-menu">
                                                 <li class="nav-item">
-                                                    <a href="recipe.html" class="nav-link">
-                                                        Recipe
+                                                    <a href="recipe.php" class="nav-link">
+                                                    Recette
                                                     </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="recipe-details.html" class="nav-link">
-                                                        Recipe Details
+                                                    <a href="recipe-details.php" class="nav-link">
+                                                    Details Recette 
                                                     </a>
                                                 </li>
                                             </ul>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="pricing.html" class="nav-link">
-                                                Pricing Plan
+                                            <a href="pricing.php" class="nav-link">
+                                            Plan tarifaire
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="faq.html" class="nav-link">
+                                            <a href="faq.php" class="nav-link">
                                                 FAQ
                                             </a>
                                         </li>
                                         <li class="nav-item">
                                             <a href="#" class="nav-link">
-                                                User
+                                             Utilisateurs
                                                 <i class="bx bx-chevron-down"></i>
                                             </a>
                                             <ul class="dropdown-menu">
                                                 <li class="nav-item">
-                                                    <a href="login.html" class="nav-link">
-                                                        Log In
+                                                    <a href="login.php" class="nav-link">
+                                                    Se connecter
                                                     </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="register.html" class="nav-link">
-                                                        Register
+                                                    <a href="register.php" class="nav-link">
+                                                        S'inscrire
                                                     </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="forgot-password.html" class="nav-link">
-                                                        Forgot Password
+                                                    <a href="forgot-password.php" class="nav-link">
+                                                    Mot de passe oublié
                                                     </a>
                                                 </li>
                                             </ul>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="terms-condition.html" class="nav-link">
-                                                Terms & Conditions
+                                            <a href="terms-condition.php" class="nav-link">
+                                            Conditions générales
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="privacy-policy.html" class="nav-link">
-                                                Privacy Policy
+                                            <a href="privacy-policy.php" class="nav-link">
+                                            politique de confidentialité
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="404.html" class="nav-link">
+                                            <a href="404.php" class="nav-link">
                                                 404 Page
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="coming-soon.html" class="nav-link">
-                                                Coming Soon
+                                            <a href="coming-soon.php" class="nav-link">
+                                            À venir
                                             </a>
                                         </li>
                                     </ul>
                                 </li>
                                 <li class="nav-item">
                                     <a href="#" class="nav-link active">
-                                        Shop
+                                        Boutique
                                         <i class="bx bx-chevron-down"></i>
                                     </a>
                                     <ul class="dropdown-menu">
                                         <li class="nav-item">
-                                            <a href="shop.html" class="nav-link active">Shop</a>
+                                            <a href="shop.php" class="nav-link active">Boutique</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="cart.html" class="nav-link">Cart</a>
+                                            <a href="cart.php" class="nav-link">Panier</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="checkout.html" class="nav-link">Checkout</a>
+                                            <a href="checkout.php" class="nav-link">Vérifier</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="wishlist.html" class="nav-link">Wishlist</a>
+                                            <a href="wishlist.php" class="nav-link">Liste de souhaits</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="shop-details.html" class="nav-link">Shop Details</a>
+                                            <a href="shop-details.php" class="nav-link">Details Boutique</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -310,68 +311,68 @@
                                     </a>
                                     <ul class="dropdown-menu">
                                         <li class="nav-item">
-                                            <a href="service-1.html" class="nav-link">
-                                                Services Style One
+                                            <a href="service-1.php" class="nav-link">
+                                           Styles De Dervices un
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="service-2.html" class="nav-link">
-                                                Services Style Two
+                                            <a href="service-2.php" class="nav-link">
+                                            Styles De Dervices Deux
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="service-details.html" class="nav-link">
-                                                Service Details
+                                            <a href="service-details.php" class="nav-link">
+                                         Details Services
                                             </a>
                                         </li>
                                     </ul>
                                 </li>
                                 <li class="nav-item">
                                     <a href="#" class="nav-link">
-                                        Blog
+                                        Articles
                                         <i class="bx bx-chevron-down"></i>
                                     </a>
                                     <ul class="dropdown-menu">
                                         <li class="nav-item">
-                                            <a href="blog-1.html" class="nav-link">
-                                                Blog Grid
+                                            <a href="blog-1.php" class="nav-link">
+                                            Grille de l'article
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="blog-2.html" class="nav-link">
-                                                Blog Left Sidebar
+                                            <a href="blog-2.php" class="nav-link">
+                                            Barre latérale gauche de l'article
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="blog-3.html" class="nav-link">
-                                                Blog Right Sidebar
+                                            <a href="blog-3.php" class="nav-link">
+                                            Barre latérale droite de l'article
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="blog-details.html" class="nav-link">
-                                                Blog Details
+                                            <a href="blog-details.php" class="nav-link">
+                                            Details de l'article
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="author.html" class="nav-link">
-                                                Author
+                                            <a href="author.php" class="nav-link">
+                                                Auteur
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="categories.html" class="nav-link">
-                                                Categories
+                                            <a href="categories.php" class="nav-link">
+                                            Catégories
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="tags.html" class="nav-link">
+                                            <a href="tags.php" class="nav-link">
                                                 Tags
                                             </a>
                                         </li>
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="contact.html" class="nav-link">
-                                        Contact Us
+                                    <a href="contact.php" class="nav-link">
+                                    Contactez-nous
                                     </a>
                                 </li>
                             </ul>
@@ -384,7 +385,7 @@
                                     </div>
                                 </div>
                                 <div class="optional-item">
-                                    <a href="appointment.html" class="default-btn two">Book An Appointment</a>
+                                    <a href="appointment.php" class="default-btn two">Prendre rendez-vous</a>
                                 </div>
                             </div>
                             <div class="mobile-nav">
@@ -397,7 +398,7 @@
                                         </div>
                                     </div>
                                     <div class="optional-item">
-                                        <a href="appointment.html" class="default-btn two">Appointment</a>
+                                        <a href="appointment.php" class="default-btn two">Rendez-vous</a>
                                     </div>
                                 </div>
                             </div>
@@ -405,17 +406,20 @@
                     </nav>
                 </div>
             </div>
-        </div>
+        </div> */ ?>
+        <?php include "includes/header.php"; 
+            //   include  "api_shops/api_produit.php"; 
+        ?>
 
         <div class="inner-banner inner-bg3">
             <div class="container">
                 <div class="inner-title text-center">
-                    <h3>Shop</h3>
+                    <h3>Boutique</h3>
                     <ul>
                         <li>
-                            <a href="index.html">Home</a>
+                            <a href="index.php">Acceuil</a>
                         </li>
-                        <li>Shop</li>
+                        <li>Boutique</li>
                     </ul>
                 </div>
             </div>
@@ -427,15 +431,15 @@
                     <div class="row align-items-center">
                         <div class="col-lg-8 col-md-7">
                             <div class="product-title">
-                                <h3>Showing 1-9 of 40 results</h3>
+                                <h3>Affichage de 1 à 9 sur 40 résultats</h3>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-5">
                             <div class="product-list">
                                 <select class="form-select" aria-label="Default select example">
-                                    <option selected>Default Price</option>
-                                    <option value="1">Price High To Low</option>
-                                    <option value="2">Price Low To High</option>
+                                    <option selected>Prix ​​par défaut</option>
+                                    <option value="1">Prix ​​élevé à bas</option>
+                                    <option value="2">Prix ​​bas à élevé</option>
                                 </select>
                                 <i class="bx bx-chevron-down"></i>
                             </div>
@@ -445,51 +449,28 @@
                 <div class="row pt-45">
                     <div class="col-lg-8">
                         <div class="row">
+                        <?php
+                        $products = recup_produict();
+                       var_dump($)
+                            ?>
+                           <?php /*
                             <div class="col-lg-4 col-sm-6">
                                 <div class="product-card">
                                     <div class="product-img">
-                                        <a href="shop-details.html">
-                                            <img src="assets/images/product-img/product-img1.png" alt="Product Images" />
-                                        </a>
-                                        <ul class="product-item-action">
-                                            <li>
-                                                <a href="wishlist.html"><i class="bx bx-heart"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="cart.html"><i class="bx bx-cart"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="content">
-                                        <h3><a href="shop-details.html">Lemon</a></h3>
-                                        <span>$50.00</span>
-                                        <div class="rating">
-                                            <i class="bx bxs-star"></i>
-                                            <i class="bx bxs-star"></i>
-                                            <i class="bx bxs-star"></i>
-                                            <i class="bx bxs-star"></i>
-                                            <i class="bx bxs-star"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <div class="product-card">
-                                    <div class="product-img">
-                                        <a href="shop-details.html">
+                                        <a href="shop-details.php">
                                             <img src="assets/images/product-img/product-img2.png" alt="Product Images" />
                                         </a>
                                         <ul class="product-item-action">
                                             <li>
-                                                <a href="wishlist.html"><i class="bx bx-heart"></i></a>
+                                                <a href="wishlist.php"><i class="bx bx-heart"></i></a>
                                             </li>
                                             <li>
-                                                <a href="cart.html"><i class="bx bx-cart"></i></a>
+                                                <a href="cart.php"><i class="bx bx-cart"></i></a>
                                             </li>
                                         </ul>
                                     </div>
                                     <div class="content">
-                                        <h3><a href="shop-details.html">Apple</a></h3>
+                                        <h3><a href="shop-details.php">Pomme</a></h3>
                                         <span>$30.00</span>
                                         <div class="rating">
                                             <i class="bx bxs-star"></i>
@@ -500,24 +481,24 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div>                           
                             <div class="col-lg-4 col-sm-6">
                                 <div class="product-card">
                                     <div class="product-img">
-                                        <a href="shop-details.html">
+                                        <a href="shop-details.php">
                                             <img src="assets/images/product-img/product-img3.png" alt="Product Images" />
                                         </a>
                                         <ul class="product-item-action">
                                             <li>
-                                                <a href="wishlist.html"><i class="bx bx-heart"></i></a>
+                                                <a href="wishlist.php"><i class="bx bx-heart"></i></a>
                                             </li>
                                             <li>
-                                                <a href="cart.html"><i class="bx bx-cart"></i></a>
+                                                <a href="cart.php"><i class="bx bx-cart"></i></a>
                                             </li>
                                         </ul>
                                     </div>
                                     <div class="content">
-                                        <h3><a href="shop-details.html">Avocado</a></h3>
+                                        <h3><a href="shop-details.php">Avocat</a></h3>
                                         <span>$60.00</span>
                                         <div class="rating">
                                             <i class="bx bxs-star"></i>
@@ -532,20 +513,20 @@
                             <div class="col-lg-4 col-sm-6">
                                 <div class="product-card">
                                     <div class="product-img">
-                                        <a href="shop-details.html">
+                                        <a href="shop-details.php">
                                             <img src="assets/images/product-img/product-img4.png" alt="Product Images" />
                                         </a>
                                         <ul class="product-item-action">
                                             <li>
-                                                <a href="wishlist.html"><i class="bx bx-heart"></i></a>
+                                                <a href="wishlist.php"><i class="bx bx-heart"></i></a>
                                             </li>
                                             <li>
-                                                <a href="cart.html"><i class="bx bx-cart"></i></a>
+                                                <a href="cart.php"><i class="bx bx-cart"></i></a>
                                             </li>
                                         </ul>
                                     </div>
                                     <div class="content">
-                                        <h3><a href="shop-details.html">Watermelon</a></h3>
+                                        <h3><a href="shop-details.php">Pastèque</a></h3>
                                         <span>$20.00</span>
                                         <div class="rating">
                                             <i class="bx bxs-star"></i>
@@ -560,20 +541,20 @@
                             <div class="col-lg-4 col-sm-6">
                                 <div class="product-card">
                                     <div class="product-img">
-                                        <a href="shop-details.html">
+                                        <a href="shop-details.php">
                                             <img src="assets/images/product-img/product-img5.png" alt="Product Images" />
                                         </a>
                                         <ul class="product-item-action">
                                             <li>
-                                                <a href="wishlist.html"><i class="bx bx-heart"></i></a>
+                                                <a href="wishlist.php"><i class="bx bx-heart"></i></a>
                                             </li>
                                             <li>
-                                                <a href="cart.html"><i class="bx bx-cart"></i></a>
+                                                <a href="cart.php"><i class="bx bx-cart"></i></a>
                                             </li>
                                         </ul>
                                     </div>
                                     <div class="content">
-                                        <h3><a href="shop-details.html">Pomegranate</a></h3>
+                                        <h3><a href="shop-details.php">Grenade</a></h3>
                                         <span>$40.00</span>
                                         <div class="rating">
                                             <i class="bx bxs-star"></i>
@@ -588,20 +569,20 @@
                             <div class="col-lg-4 col-sm-6">
                                 <div class="product-card">
                                     <div class="product-img">
-                                        <a href="shop-details.html">
+                                        <a href="shop-details.php">
                                             <img src="assets/images/product-img/product-img6.png" alt="Product Images" />
                                         </a>
                                         <ul class="product-item-action">
                                             <li>
-                                                <a href="wishlist.html"><i class="bx bx-heart"></i></a>
+                                                <a href="wishlist.php"><i class="bx bx-heart"></i></a>
                                             </li>
                                             <li>
-                                                <a href="cart.html"><i class="bx bx-cart"></i></a>
+                                                <a href="cart.php"><i class="bx bx-cart"></i></a>
                                             </li>
                                         </ul>
                                     </div>
                                     <div class="content">
-                                        <h3><a href="shop-details.html">Capsicum</a></h3>
+                                        <h3><a href="shop-details.php">poivron</a></h3>
                                         <span>$70.00</span>
                                         <div class="rating">
                                             <i class="bx bxs-star"></i>
@@ -613,15 +594,16 @@
                                     </div>
                                 </div>
                             </div>
+                            */ ?>
                             <div class="col-lg-12 col-md-12 text-center">
                                 <div class="pagination-area">
-                                    <a href="shop.html" class="prev page-numbers">
+                                    <a href="shop.php" class="prev page-numbers">
                                         <i class="bx bx-chevron-left"></i>
                                     </a>
                                     <span class="page-numbers current" aria-current="page">1</span>
-                                    <a href="shop.html" class="page-numbers">2</a>
-                                    <a href="shop.html" class="page-numbers">3</a>
-                                    <a href="shop.html" class="next page-numbers">
+                                    <a href="shop.php" class="page-numbers">2</a>
+                                    <a href="shop.php" class="page-numbers">3</a>
+                                    <a href="shop.php" class="next page-numbers">
                                         <i class="bx bx-chevron-right"></i>
                                     </a>
                                 </div>
@@ -631,41 +613,41 @@
                     <div class="col-lg-4">
                         <div class="side-bar-area pl-20">
                             <div class="recipe-side-bar-categories">
-                                <h3>Categories</h3>
+                                <h3>Catégories</h3>
                                 <ul>
                                     <li>
-                                        <a href="categories.html" target="_blank">
-                                            Dinner
+                                        <a href="categories.php" target="_blank">
+                                        Dîner
                                             <span>(09)</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="categories.html" target="_blank">
-                                            Dessert
+                                        <a href="categories.php" target="_blank">
+                                        Dessert
                                             <span>(10)</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="categories.html" target="_blank">
-                                            Pasta
+                                        <a href="categories.php" target="_blank">
+                                        Pâtes
                                             <span>(12)</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="categories.html" target="_blank">
-                                            Cake
+                                        <a href="categories.php" target="_blank">
+                                        Gâteau
                                             <span>(09)</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="categories.html" target="_blank">
+                                        <a href="categories.php" target="_blank">
                                             Fruits
                                             <span>(08)</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="categories.html" target="_blank">
-                                            Soft drinks
+                                        <a href="categories.php" target="_blank">
+                                        Boissons gazeuses
                                             <span> (05)</span>
                                         </a>
                                     </li>
@@ -684,7 +666,7 @@
                         <div class="col-lg-3 col-sm-6">
                             <div class="footer-widget">
                                 <div class="footer-logo">
-                                    <a href="index.html">
+                                    <a href="index.php">
                                         <img src="assets/images/footer-logo.png" alt="Images" />
                                     </a>
                                 </div>
@@ -717,31 +699,31 @@
                         </div>
                         <div class="col-lg-2 col-sm-6">
                             <div class="footer-widget ps-5">
-                                <h3>Useful Links</h3>
+                                <h3>Liens utiles</h3>
                                 <ul class="footer-list">
                                     <li>
-                                        <a href="index.html" target="_blank">
-                                            Home
+                                        <a href="index.php" target="_blank">
+                                           Acceuil
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="about.html" target="_blank">
-                                            About Us
+                                        <a href="about.php" target="_blank">
+                                        À propos de nous
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="portfolio.html" target="_blank">
+                                        <a href="portfolio.php" target="_blank">
                                             Portfolio
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="privacy-policy.html" target="_blank">
-                                            Privacy Policy
+                                        <a href="privacy-policy.php" target="_blank">
+                                        Politique de confidentialité
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="terms-condition.html" target="_blank">
-                                            Terms & Condition
+                                        <a href="terms-condition.php" target="_blank">
+                                        Conditions générales
                                         </a>
                                     </li>
                                 </ul>
@@ -749,10 +731,10 @@
                         </div>
                         <div class="col-lg-3 col-sm-6">
                             <div class="footer-widget ps-5">
-                                <h3>Information</h3>
+                                <h3>Informations</h3>
                                 <ul class="footer-contact">
                                     <li>
-                                        Phone:
+                                    Téléphone:
                                         <span>
                                             <a href="tel:+8245678924">+8245678924</a><br />
                                             <a href="tel:+8245668964">+8245668964</a>
@@ -782,13 +764,13 @@
                         </div>
                         <div class="col-lg-4 col-sm-6">
                             <div class="footer-widget ps-5">
-                                <h3>Newsletter</h3>
+                                <h3>Bulletin</h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
                                 <div class="newsletter-area">
                                     <form class="newsletter-form" data-toggle="validator" method="POST">
-                                        <input type="email" class="form-control" placeholder="Enter Your Email" name="EMAIL" required autocomplete="off" />
+                                        <input type="email" class="form-control" placeholder="Entrez votre email" name="EMAIL" required autocomplete="off" />
                                         <button class="subscribe-btn" type="submit">
-                                            Subscribe
+                                        S'abonner
                                         </button>
                                         <div id="validator-newsletter" class="form-result"></div>
                                     </form>
@@ -860,5 +842,5 @@
         <script src="assets/js/custom.js"></script>
     </body>
 
-    <!-- Mirrored from templates.hibootstrap.com/arrola/default/shop.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 18 Feb 2023 17:10:41 GMT -->
+    <!-- Mirrored from templates.hibootstrap.com/arrola/default/shop.php by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 18 Feb 2023 17:10:41 GMT -->
 </html>
