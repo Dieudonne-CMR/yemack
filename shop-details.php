@@ -1,3 +1,4 @@
+<?php include "api_shops/cle_api_shop.php"; ?>
 <!DOCTYPE html>
 <html lang="zxx">
     <!-- Mirrored from templates.hibootstrap.com/arrola/default/shop-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 18 Feb 2023 17:10:41 GMT -->
@@ -36,14 +37,13 @@
         <link rel="icon" type="image/png" href="assets/images/favicon.png" />
     </head>
     <body>
-        <div class="preloader">
+        <!-- <div class="preloader">
             <div class="spinner">
                 <div class="dot1"></div>
                 <div class="dot2"></div>
             </div>
-        </div>
-
-        <header class="top-header top-header-bg-two">
+        </div> -->
+          <?php /*   <header class="top-header top-header-bg-two">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-3 col-md-4">
@@ -405,17 +405,17 @@
                     </nav>
                 </div>
             </div>
-        </div>
-
+        </div> */ ?>
+        <?php include('includes/header.php') ?>
         <div class="inner-banner inner-bg10">
             <div class="container">
                 <div class="inner-title text-center">
-                    <h3>Shop Details</h3>
+                    <h3>Détails du produit</h3>
                     <ul>
                         <li>
-                            <a href="index.html">Home</a>
+                            <a href="index.html">Accueil</a>
                         </li>
-                        <li>Shop Details</li>
+                        <li>Détails du produit</li>
                     </ul>
                 </div>
             </div>
@@ -424,17 +424,26 @@
         <div class="shop-details-area pt-100 pb-70">
             <div class="container">
                 <div class="row align-items-center">
+                <?php
+                    url()= " ";
+                    if(isset($_GET['mat_article'])){
+                        $mat= $_GET['mat_article'];
+                    }
+                    $product=recup_produict_detail($mat);
+                    // var_dump($_GET['url']);
+                    foreach($product as $produit) {
+                    ?>
                     <div class="col-lg-6 col-md-12">
                         <div class="shop-details-img">
-                            <img src="assets/images/product-img/product-details.png" alt="Image" />
+                            <img src="<?=$image_produit.$produit->lien_img_vedette?>" alt="Image" />
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-12">
                         <div class="shop-desc pl-20">
-                            <h3>Fresh Apple</h3>
+                            <h3><?= $produit->nom_art?></h3>
                             <div class="price">
-                                <span class="new-price">$135.00</span>
-                                <span class="old-price">$140.00</span>
+                                <span class="new-price"><?=$produit->prix_reel?></span>
+                                <span class="old-price"><?=$produit->prix_fictif?></span>
                             </div>
                             <div class="shop-review">
                                 <div class="rating">
@@ -444,13 +453,13 @@
                                     <i class="bx bxs-star"></i>
                                     <i class="bx bxs-star-half"></i>
                                 </div>
-                                <a href="shop-details.html" class="rating-count">3 reviews</a>
+                                <a href="shop-details.php?mat_article=<?=$produit->mat_article?>" class="rating-count">3 commentaires</a>
                             </div>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.
-                            </p>
+                                <?=$produit->courte_description?>
+                             </p>
                             <div class="input-count-area">
-                                <h3>Quantity</h3>
+                                <h3>Quantité</h3>
                                 <div class="input-counter">
                                     <span class="minus-btn"><i class="bx bx-minus"></i></span>
                                     <input type="text" min="1" value="1" />
@@ -458,33 +467,33 @@
                                 </div>
                             </div>
                             <div class="shop-add">
-                                <button type="submit" class="default-btn"><i class="fas fa-cart-plus"></i> Buy Now!</button>
-                                <button type="submit" class="default-btn"><i class="fas fa-cart-plus"></i> Add To Cart</button>
-                            </div>
+                                <button type="submit" class="default-btn"><i class="fas fa-cart-plus"></i> Acheter maintenant!</button>
+                                <button type="submit" class="default-btn"><i class="fas fa-cart-plus"></i> Ajouter au panier</button>
+                            </div>              
                             <div class="shop-share">
                                 <ul>
                                     <li>
-                                        <span>Share:</span>
+                                        <span>Partager:</span>
                                     </li>
                                     <li>
-                                        <a href="https://www.facebook.com/" target="_blank">
+                                      <a href="https://www.facebook.com/sharer/sharer.php?u=<?=url()?>" target="_blank">
                                             <i class="bx bxl-facebook"></i>
-                                        </a>
+                                      </a>
                                     </li>
                                     <li>
-                                        <a href="https://www.linkedin.com/" target="_blank">
+                                      <a href="https://www.linkedin.com/shareArticle?mini=true&url=<?=url()?>&title=Visitez le site de vente de produits naturels&summary=resumme&source=akila" target="_blank">
                                             <i class="bx bxl-linkedin"></i>
-                                        </a>
+                                      </a>
                                     </li>
                                     <li>
-                                        <a href="https://twitter.com/" target="_blank">
+                                      <a href="https://twitter.com/intent/tweet?text=Texte%20à%20partager&url=<?=url()?>" target="_blank">
                                             <i class="bx bxl-twitter"></i>
-                                        </a>
+                                      </a>
                                     </li>
                                     <li>
-                                        <a href="https://www.instagram.com/" target="_blank">
+                                      <a href="https://www.instagram.com/share?url=<?=url()?>" target="_blank">
                                             <i class="bx bxl-instagram"></i>
-                                        </a>
+                                      </a>
                                     </li>
                                 </ul>
                             </div>
@@ -493,7 +502,7 @@
                 </div>
             </div>
         </div>
-
+     
         <div class="shop-details-tab-area pb-70">
             <div class="container">
                 <div class="tab shop-detls-tab">
@@ -504,10 +513,10 @@
                                     Description
                                 </li>
                                 <li>
-                                    Additional information
+                                    Informations supplémentaires
                                 </li>
                                 <li>
-                                    Reviews
+                                    Commentaires
                                 </li>
                             </ul>
                         </div>
@@ -516,20 +525,17 @@
                                 <div class="tabs_item current">
                                     <div class="shop-detls-tab-content">
                                         <p>
-                                            Design inspiration lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque, id pulvinar odio lorem non turpis. Nullam sit amet
-                                            enim. Suspendisse id velit vitae ligula volutpat condimentum. Aliquam erat volutpat. Sed quis velit. Nulla facilisi. Nulla libero. Vivamus pharetra posuere sapien. Nam consectetuer. Sed aliquam,
-                                            nunc eget euismod ullamcorper, lectus nunc ullamcorper orci, fermentum bibendum enim nibh eget ipsum. Nam consectetuer. Sed aliquam, nunc eget euismod ullamcorper, lectus nunc ullamcorper orci,
-                                            fermentum bibendum enim nibh eget ipsum.
+                                           <?=$produit->description?>
                                         </p>
                                     </div>
                                 </div>
                                 <div class="tabs_item">
                                     <div class="shop-detls-tab-content">
                                         <ul class="additional-information">
-                                            <li><span>Brand:</span> ThemeForest</li>
-                                            <li><span>Color:</span> Brown</li>
-                                            <li><span>Size:</span> Large, Medium</li>
-                                            <li><span>Weight:</span> 27 kg</li>
+                                            <li><span>Marque:</span> ThemeForest</li>
+                                            <li><span>Couleur:</span> Brown</li>
+                                            <li><span>Taille:</span> Large, Medium</li>
+                                            <li><span>Poids:</span> 27 kg</li>
                                             <li><span>Dimensions:</span> 16 x 22 x 123 cm</li>
                                         </ul>
                                     </div>
@@ -537,7 +543,7 @@
                                 <div class="tabs_item">
                                     <div class="shop-detls-tab-content">
                                         <div class="shop-review-form">
-                                            <h3>Customer Reviews</h3>
+                                            <h3>Commentaires des clients</h3>
                                             <div class="review-title">
                                                 <div class="rating">
                                                     <i class="bx bxs-star"></i>
@@ -546,8 +552,8 @@
                                                     <i class="bx bxs-star"></i>
                                                     <i class="bx bxs-star-half"></i>
                                                 </div>
-                                                <p>Based on 3 reviews</p>
-                                                <a href="shop-details.html" class="default-btn btn-right">Write a Review <span></span></a>
+                                                <p>Basé sur 3 avis</p>
+                                                <a href="shop-details.html" class="default-btn btn-right">Laisser un commentaire<span></span></a>
                                             </div>
                                             <div class="review-comments">
                                                 <div class="review-item">
@@ -565,11 +571,12 @@
                                                         <i class="bx bxs-star"></i>
                                                         <i class="bx bxs-star-half"></i>
                                                     </div>
-                                                    <h3>Good</h3>
+                                                    <h3>Bien</h3>
                                                     <p>
                                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
                                                     </p>
-                                                    <a href="shop-details.html" class="review-report-link">Report as Inappropriate</a>
+                                                    <a href="shop-details.html" class="review-report-link">
+                                                    Signaler comme inapproprié</a>
                                                 </div>
                                                 <div class="review-item">
                                                     <div class="content">
@@ -586,9 +593,10 @@
                                                         <i class="bx bxs-star"></i>
                                                         <i class="bx bxs-star-half"></i>
                                                     </div>
-                                                    <h3>Good</h3>
+                                                    <h3>Bien</h3>
                                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-                                                    <a href="shop-details.html" class="review-report-link">Report as Inappropriate</a>
+                                                    <a href="shop-details.html" class="review-report-link">
+                                                    Signaler comme inapproprié</a>
                                                 </div>
                                                 <div class="review-item">
                                                     <div class="content">
@@ -605,44 +613,45 @@
                                                         <i class="bx bxs-star"></i>
                                                         <i class="bx bxs-star-half"></i>
                                                     </div>
-                                                    <h3>Good</h3>
+                                                    <h3>Bien</h3>
                                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-                                                    <a href="shop-details.html" class="review-report-link">Report as Inappropriate</a>
+                                                    <a href="shop-details.html" class="review-report-link">
+                                                    Signaler comme inapproprié</a>
                                                 </div>
                                             </div>
                                             <div class="review-form">
                                                 <div class="contact-wrap-form">
                                                     <div class="contact-form">
-                                                        <h4>Write a Review</h4>
+                                                        <h4>Laisser un commentaire</h4>
                                                         <form id="contactForm">
                                                             <div class="row">
                                                                 <div class="col-lg-6 col-sm-6">
                                                                     <div class="form-group">
-                                                                        <label>Your Name*</label>
-                                                                        <input type="text" name="name" id="name" class="form-control" required data-error="Please enter your name" placeholder="Your Name" />
+                                                                        <label>Votre nom*</label>
+                                                                        <input type="text" name="name" id="name" class="form-control" required data-error="Veuiller entrer votre nom" placeholder="Votre nom" />
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-lg-6 col-sm-6">
                                                                     <div class="form-group">
-                                                                        <label>Your Email Address*</label>
-                                                                        <input type="email" name="email" id="email" class="form-control" required data-error="Please enter your email" placeholder="Your Email" />
+                                                                        <label>Votre adresse e-mail*</label>
+                                                                        <input type="email" name="email" id="email" class="form-control" required data-error="Veuiller entrer votre adresse e-mail" placeholder="Votre e-mail" />
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-lg-12 col-sm-12">
                                                                     <div class="form-group">
-                                                                        <label>Your Website Link*</label>
-                                                                        <input type="text" name="website" class="form-control" required data-error="Your website" placeholder="Your Website" />
+                                                                        <label>Le lien de votre site*</label>
+                                                                        <input type="text" name="website" class="form-control" required data-error="Veuiller entrer le lien de votre site web" placeholder="Votre site web" />
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-lg-12 col-md-12">
                                                                     <div class="form-group">
-                                                                        <label>Comment*</label>
-                                                                        <textarea name="message" class="form-control" id="message" cols="30" rows="8" required data-error="Write your message" placeholder="Your Message.."></textarea>
+                                                                        <label>Laisser un message*</label>
+                                                                        <textarea name="message" class="form-control" id="message" cols="30" rows="8" required data-error="Veuiller laisser un message" placeholder="Votre message.."></textarea>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-lg-12 col-md-12">
                                                                     <button type="submit" class="default-btn">
-                                                                        Post A Comment
+                                                                        Publier le commentaire
                                                                     </button>
                                                                 </div>
                                                             </div>
@@ -659,16 +668,23 @@
                 </div>
             </div>
         </div>
-
+     <?php 
+     }
+     ?>
         <div class="product-area pb-70">
             <div class="container">
-                <h3 class="top-title">Top Sale Products</h3>
+                <h3 class="top-title">Les produits les plus vendus</h3>
                 <div class="row justify-content-center">
+             <?php
+                $productt=recup_produict();
+                foreach($productt as $key=>$produitt){
+                if($key<4){
+             ?>    
                     <div class="col-lg-3 col-sm-6">
                         <div class="product-card">
                             <div class="product-img">
-                                <a href="shop-details.html">
-                                    <img src="assets/images/product-img/product-img1.png" alt="Product Images" />
+                                <a href="shop-details.php?mat_article=<?=$produitt->mat_article?>">
+                                <img src="<?=$image_produit.$produitt->lien_img_vedette?>" alt="Product Images" />
                                 </a>
                                 <ul class="product-item-action">
                                     <li>
@@ -680,8 +696,8 @@
                                 </ul>
                             </div>
                             <div class="content">
-                                <h3><a href="shop-details.html">Lemon</a></h3>
-                                <span>$50.00</span>
+                                <h3><a href="shop-details.php?mat_article=<?=$produitt->mat_article?>"><?=$produitt->nom_art?></a></h3>
+                                <span><?=$produitt->prix_reel."FCFA"?></span>
                                 <div class="rating">
                                     <i class="bx bxs-star"></i>
                                     <i class="bx bxs-star"></i>
@@ -692,6 +708,14 @@
                             </div>
                         </div>
                     </div>
+             <?php 
+                }
+                else{
+                    break;
+                }
+            }
+             ?>
+                  <?php /*
                     <div class="col-lg-3 col-sm-6">
                         <div class="product-card">
                             <div class="product-img">
@@ -708,7 +732,7 @@
                                 </ul>
                             </div>
                             <div class="content">
-                                <h3><a href="shop-details.html">Apple</a></h3>
+                                <h3><a href="shop-details.html">Pomme</a></h3>
                                 <span>$30.00</span>
                                 <div class="rating">
                                     <i class="bx bxs-star"></i>
@@ -736,7 +760,7 @@
                                 </ul>
                             </div>
                             <div class="content">
-                                <h3><a href="shop-details.html">Avocado</a></h3>
+                                <h3><a href="shop-details.html">Avocat</a></h3>
                                 <span>$60.00</span>
                                 <div class="rating">
                                     <i class="bx bxs-star"></i>
@@ -764,7 +788,7 @@
                                 </ul>
                             </div>
                             <div class="content">
-                                <h3><a href="shop-details.html">Watermelon</a></h3>
+                                <h3><a href="shop-details.html">Pastèque</a></h3>
                                 <span>$20.00</span>
                                 <div class="rating">
                                     <i class="bx bxs-star"></i>
@@ -776,11 +800,12 @@
                             </div>
                         </div>
                     </div>
+             */?>
                 </div>
             </div>
         </div>
 
-        <footer class="footer-area footer-area-bg">
+        <footer class="footer-area footer-area-bg"> 
             <div class="container">
                 <div class="footer-top pt-100 pb-70">
                     <div class="row">
@@ -820,16 +845,16 @@
                         </div>
                         <div class="col-lg-2 col-sm-6">
                             <div class="footer-widget ps-5">
-                                <h3>Useful Links</h3>
+                                <h3>Liens utiles</h3>
                                 <ul class="footer-list">
                                     <li>
                                         <a href="index.html" target="_blank">
-                                            Home
+                                            Accueil
                                         </a>
                                     </li>
                                     <li>
                                         <a href="about.html" target="_blank">
-                                            About Us
+                                            À propos de nous
                                         </a>
                                     </li>
                                     <li>
@@ -839,12 +864,12 @@
                                     </li>
                                     <li>
                                         <a href="privacy-policy.html" target="_blank">
-                                            Privacy Policy
+                                            Politique de confidentialité
                                         </a>
                                     </li>
                                     <li>
                                         <a href="terms-condition.html" target="_blank">
-                                            Terms & Condition
+                                            Termes & Conditions
                                         </a>
                                     </li>
                                 </ul>
@@ -852,10 +877,10 @@
                         </div>
                         <div class="col-lg-3 col-sm-6">
                             <div class="footer-widget ps-5">
-                                <h3>Information</h3>
+                                <h3>Informations</h3>
                                 <ul class="footer-contact">
                                     <li>
-                                        Phone:
+                                        Numéro de téléphone:
                                         <span>
                                             <a href="tel:+8245678924">+8245678924</a><br />
                                             <a href="tel:+8245668964">+8245668964</a>
@@ -874,7 +899,7 @@
                                         </span>
                                     </li>
                                     <li>
-                                        Address:
+                                        Adresse:
                                         <span>
                                             5ut, Stamford South,<br />
                                             New Zeland
@@ -889,9 +914,9 @@
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
                                 <div class="newsletter-area">
                                     <form class="newsletter-form" data-toggle="validator" method="POST">
-                                        <input type="email" class="form-control" placeholder="Enter Your Email" name="EMAIL" required autocomplete="off" />
+                                        <input type="email" class="form-control" placeholder="Entrer votre adresse e-mail" name="EMAIL" required autocomplete="off" />
                                         <button class="subscribe-btn" type="submit">
-                                            Subscribe
+                                            S'abonner
                                         </button>
                                         <div id="validator-newsletter" class="form-result"></div>
                                     </form>
@@ -910,15 +935,15 @@
                             <script>
                                 document.write(new Date().getFullYear());
                             </script>
-                            Arrola. All Rights Reserved by
+                            Arrola. Tous droits réservés par
                             <a href="https://hibootstrap.com/" target="_blank">HiBootstrap</a>
                         </p>
                     </div>
                 </div>
             </div>
-        </footer>
+          </footer> 
 
-        <div class="modal fade fade-scale searchmodal" id="searchmodal" tabindex="-1" role="dialog">
+          <div class="modal fade fade-scale searchmodal" id="searchmodal" tabindex="-1" role="dialog"> 
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -928,14 +953,16 @@
                     </div>
                     <div class="modal-body">
                         <form class="modal-search-form">
-                            <input type="search" class="search-field" placeholder="Search..." />
+                            <input type="search" class="search-field" placeholder="Rechercher..." />
                             <button type="submit"><i class="bx bx-search-alt"></i></button>
                         </form>
                     </div>
                 </div>
             </div>
-        </div>
-
+         </div> 
+        <?php 
+        // include "includes/footer.php";
+        ?>
         <script src="assets/js/jquery.min.js"></script>
 
         <script src="assets/js/bootstrap.bundle.min.js"></script>
