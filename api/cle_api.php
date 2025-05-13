@@ -18,7 +18,8 @@ $Lien_image_offres="https://akila.blog/img_page/";   // lien des logos des parte
 // include "bd/query.php" ;
 // $matricule_entreprise = "662f2c0f2234"; 
 
-$matricule_entreprise="654b7262c7d05"; // matricule de l'entreprise
+$matricule_entreprise="67bd129738f40"; // matricule de l'entreprise
+ 
 // include("f/fonctions.php"); // les fonctions de l'application
 include('api/fonctions.php'); // les fonctions de l'application
 include('api/api_article.php'); // les fonctions de l'api des articles
