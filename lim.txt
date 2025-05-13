@@ -1,0 +1,1 @@
+<?= limiterNombreMots(strip_tags($value->description),7)  ?>

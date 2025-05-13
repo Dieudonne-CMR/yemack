@@ -1,3 +1,9 @@
+<?php
+    include('api/cle_api.php'); // les fonctions de l'application
+    include('fonction/fonction.php'); // les fonctions de l'application
+    $services = recup_services();
+    //var_dump($services);
+?>
 <!DOCTYPE html>
 <html lang="zxx">
     <!-- Mirrored from templates.hibootstrap.com/arrola/default/service-1.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 18 Feb 2023 17:10:45 GMT -->
@@ -65,20 +71,24 @@
                     <h2>Yemak santé et beauté</h2>
                 </div>
                 <div class="row pt-45 justify-content-center">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="services-card">
-                            <a href="service-details.html">
-                                <img src="assets/images/services/services-img1.jpg" alt="Images" />
-                            </a>
-                            <div class="content">
-                                <h3>
-                                    <a href="service-details.html">Bilan Minceur et nitritionnel </a>
-                                </h3>
-                                <p>
-                                   Faites votre bilan minceur et recevez votre programme minceur personnalisé
+                    <?php foreach($services as $value): ?>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="services-card">
+                                <a href="service-details.html">
+                                    <img src="<?= $img_service . $value->image?>" alt="Images" />
+                                </a>
+                                <div class="content">
+                                    <h3>
+                                        <a href="service-details/<?= $value->matricule_service?>"><?= $value->nom?> </a>
+                                    </h3>
+                                    <p><?= limiterNombreMots(strip_tags($value->description),16)  ?></p>
+                                    <a href="service-detail/<?= $value->matricule_service?>" class="learn-btn">Lire Plus</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    <?php endforeach; ?>
+                    
+                    <?php /*
                     <div class="col-lg-4 col-md-6">
                         <div class="services-card">
                             <a href="service-details.html">
@@ -143,6 +153,7 @@
                             </div>
                         </div>
                     </div>
+                    
                     <div class="col-lg-4 col-md-6">
                         <div class="services-card">
                             <a href="service-details.html">
@@ -171,7 +182,7 @@
                                 <i class="bx bx-chevron-right"></i>
                             </a>
                         </div>
-                    </div>
+                    </div>*/?>
                 </div>
             </div>
         </div>

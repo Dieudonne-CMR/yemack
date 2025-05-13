@@ -1,7 +1,17 @@
+<?php
+    include('api/cle_api.php');
+    $url = $_SERVER['REQUEST_URI'];
+    $path = explode('/', $url);
+    $id = end($path); // Récupérer l'ID de l'URL
+    $service_detail = Recuper_service_detail($id);
+    $services = recup_services();
+    //var_dump($service_detail);
+?>
 <!DOCTYPE html>
 <html lang="zxx">
     <!-- Mirrored from templates.hibootstrap.com/arrola/default/service-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 18 Feb 2023 17:10:46 GMT -->
     <head>
+        <base href="../">
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -31,7 +41,7 @@
 
         <link rel="stylesheet" href="assets/css/theme-dark.css" />
 
-        <title>Arrola - Nutrition & Recipe HTML Template</title>
+        <title> <?= @$service_detail[0]->nom ?></title>
 
         <link rel="icon" type="image/png" href="assets/images/favicon.png" />
     </head>
@@ -410,10 +420,10 @@
         <div class="inner-banner inner-bg7">
             <div class="container">
                 <div class="inner-title text-center">
-                    <h3>Service Details</h3>
+                    <h3><?= $service_detail[0]->nom?></h3>
                     <ul>
                         <li>
-                            <a href="index.html">Home</a>
+                            <a href="home">Accueil</a>
                         </li>
                         <li>Service Details</li>
                     </ul>
@@ -436,42 +446,15 @@
                             </div>
                             <div class="side-bar-categories">
                                 <ul>
+                                    <?php foreach($services as $value): ?>
                                     <li>
-                                        <a href="categories.html" target="_blank">
-                                            Personalized Nutrition
+                                        <a href="service-detail/<?= $value->matricule_service ?>" target="_blank">
+                                            <?= $value->nom ?>
                                             <i class="bx bx-right-arrow-alt"></i>
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href="categories.html" target="_blank">
-                                            Health Nutrition
-                                            <i class="bx bx-right-arrow-alt"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="categories.html" target="_blank">
-                                            Weight Loss Program
-                                            <i class="bx bx-right-arrow-alt"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="categories.html" target="_blank">
-                                            Sports Nutritionist
-                                            <i class="bx bx-right-arrow-alt"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="categories.html" target="_blank">
-                                            Child Nutritionist
-                                            <i class="bx bx-right-arrow-alt"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="categories.html" target="_blank">
-                                            Workout Program
-                                            <i class="bx bx-right-arrow-alt"></i>
-                                        </a>
-                                    </li>
+                                    <?php endforeach; ?>
+                                    
                                 </ul>
                             </div>
                             <div class="side-bar-widget">
@@ -499,6 +482,7 @@
                                     </li>
                                 </ul>
                             </div>
+                            <?php /*
                             <div class="side-bar-widget">
                                 <h3 class="title-tag">Popular Tags</h3>
                                 <ul class="side-bar-widget-tag">
@@ -511,28 +495,27 @@
                                     <li><a href="tags.html" target="_blank">Organic</a></li>
                                     <li><a href="tags.html" target="_blank">Healthy</a></li>
                                 </ul>
-                            </div>
+                            </div>*/?>
                         </div>
                     </div>
                     <div class="col-lg-8">
                         <div class="service-details-content">
                             <div class="service-preview-slider owl-carousel owl-theme">
                                 <div class="service-preview-item">
-                                    <img src="assets/images/services/service-details-img1.jpg" alt="Blog Images" />
+                                    <img src="<?= $img_service .$service_detail[0]->image ?>" alt="Blog Images" />
                                 </div>
+                                <?php /*
                                 <div class="service-preview-item">
                                     <img src="assets/images/services/service-details-img2.jpg" alt="Blog Images" />
                                 </div>
+                                
                                 <div class="service-preview-item">
                                     <img src="assets/images/services/service-details-img3.jpg" alt="Blog Images" />
-                                </div>
+                                </div>*/?>
                             </div>
-                            <h2>Individual Coaching</h2>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-                                scrambled it to make.
-                            </p>
+                            <h2><?= $service_detail[0]->nom; ?></h2>
+                            <p><?= strip_tags($service_detail[0]->description); ?></p>
+                            <?php /*
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan
                                 lacus vel Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -589,150 +572,14 @@
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan
                                 lacus vel Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                            </p>
+                            </p>*/?>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <footer class="footer-area footer-area-bg">
-            <div class="container">
-                <div class="footer-top pt-100 pb-70">
-                    <div class="row">
-                        <div class="col-lg-3 col-sm-6">
-                            <div class="footer-widget">
-                                <div class="footer-logo">
-                                    <a href="index.html">
-                                        <img src="assets/images/footer-logo.png" alt="Images" />
-                                    </a>
-                                </div>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua quis ipsum suspendisse.
-                                </p>
-                                <ul class="social-link">
-                                    <li>
-                                        <a href="https://www.facebook.com/" target="_blank">
-                                            <i class="bx bxl-facebook"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.linkedin.com/" target="_blank">
-                                            <i class="bx bxl-linkedin"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.pinterest.com/" target="_blank">
-                                            <i class="bx bxl-pinterest-alt"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.instagram.com/" target="_blank">
-                                            <i class="bx bxl-instagram"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-sm-6">
-                            <div class="footer-widget ps-5">
-                                <h3>Useful Links</h3>
-                                <ul class="footer-list">
-                                    <li>
-                                        <a href="index.html" target="_blank">
-                                            Home
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="about.html" target="_blank">
-                                            About Us
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="portfolio.html" target="_blank">
-                                            Portfolio
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="privacy-policy.html" target="_blank">
-                                            Privacy Policy
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="terms-condition.html" target="_blank">
-                                            Terms & Condition
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-sm-6">
-                            <div class="footer-widget ps-5">
-                                <h3>Information</h3>
-                                <ul class="footer-contact">
-                                    <li>
-                                        Phone:
-                                        <span>
-                                            <a href="tel:+8245678924">+8245678924</a><br />
-                                            <a href="tel:+8245668964">+8245668964</a>
-                                        </span>
-                                    </li>
-                                    <li>
-                                        Email:
-                                        <span>
-                                            <a href="https://templates.hibootstrap.com/cdn-cgi/l/email-protection#a5cdc0c9cae5c4d7d7cac9c48bc6cac8">
-                                                <span class="__cf_email__" data-cfemail="0f676a6363604f6e7d7d60636e216c6062">[email&#160;protected]</span>
-                                            </a>
-                                            <br />
-                                            <a href="https://templates.hibootstrap.com/cdn-cgi/l/email-protection#026b6c646d426370706d6e632c616d6f">
-                                                <span class="__cf_email__" data-cfemail="5930373f3619382b2b363538773a3634">[email&#160;protected]</span>
-                                            </a>
-                                        </span>
-                                    </li>
-                                    <li>
-                                        Address:
-                                        <span>
-                                            5ut, Stamford South,<br />
-                                            New Zeland
-                                        </span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="footer-widget ps-5">
-                                <h3>Newsletter</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-                                <div class="newsletter-area">
-                                    <form class="newsletter-form" data-toggle="validator" method="POST">
-                                        <input type="email" class="form-control" placeholder="Enter Your Email" name="EMAIL" required autocomplete="off" />
-                                        <button class="subscribe-btn" type="submit">
-                                            Subscribe
-                                        </button>
-                                        <div id="validator-newsletter" class="form-result"></div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="copyright-area">
-                <div class="container">
-                    <div class="copy-right-text text-center">
-                        <p>
-                            Copyright @
-                            <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-                            <script>
-                                document.write(new Date().getFullYear());
-                            </script>
-                            Arrola. All Rights Reserved by
-                            <a href="https://hibootstrap.com/" target="_blank">HiBootstrap</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </footer>
+        <?php include('includes/footer.php')?>
 
         <div class="modal fade fade-scale searchmodal" id="searchmodal" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">

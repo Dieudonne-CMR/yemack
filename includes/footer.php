@@ -5,8 +5,8 @@
                     <div class="col-lg-3 col-sm-6">
                         <div class="footer-widget">
                             <div class="footer-logo">
-                                <a href="index">
-                                    <img src="assets/images/ys.png" alt="Images" />
+                                <a href="home">
+                                    <img src="assets/images/footer-logo.png" alt="Images" />
                                 </a>
                             </div>
                             <p>
