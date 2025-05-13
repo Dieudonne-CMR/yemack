@@ -1,169 +1,162 @@
-    <footer class="footer-area footer-area-bg">
-        <div class="container">
-            <div class="footer-top pt-100 pb-70">
-                <div class="row">
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="footer-widget">
-                            <div class="footer-logo">
-                                <a href="index">
-                                    <img src="assets/images/ys.png" alt="Images" />
-                                </a>
-                            </div>
-                            <p>
-                            Yemak Wellness vous propose des soins non invasifs , à la pointe de l'innovation, pour un maximum d'efficacité
-                            </p>
-                            <ul class="social-link">
-                                <li>
-                                    <a href="https://www.facebook.com/" target="_blank">
-                                        <i class="bx bxl-facebook"></i>
-                                    </a>
-                                </li>
-                               
-                                <li>
-                                    <a href="https://www.instagram.com/" target="_blank">
-                                        <i class="bx bxl-instagram"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-sm-6">
-                        <div class="footer-widget ps-5">
-                            <h3>Liens Utiles</h3>
-                            <ul class="footer-list">
-                                <li>
-                                    <a href="index" target="_blank">
-                                        Accueil
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="about" target="_blank">
-                                        A Propos
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="services" target="_blank">
-                                        Services
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="blog" target="_blank">
-                                        Blog
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="terms-condition" target="_blank">
-                                        Terms & Condition
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <div class="footer-widget ps-5">
-                            <h3>Informations</h3>
-                            <ul class="footer-contact">
-                                <li>
-                                    Téléphone:
-                                    <span>
-                                        <!-- <a href="tel:+242064457126">00 242 06 445 7126</a><br /> -->
-                                        <a href="tel:00242067792332">00 242 067 792 332</a>
-                                        <a href="tel:00242068140908">00 242 068 140 908</a>
-                                        <a href="tel:0022871845353">00 228 71 84 5353</a>
-                                    </span>
-                                </li> <br>
-                                <li>
-                                    Email:
-                                    <span>
-                                    <a href="mailto:info@yemak-wellness.com">info@yemak-wellness.com</a>
-                                        <!-- <br /> -->
-                                        <a href="mailto:adminyemak@yemaksantebeaute.com">adminyemak@yemaksantebeaute.com</a>
-                                    </span>
-                                </li>
-                                <li>
-                                    Adresse:
-                                    <span>
-                                    35 avenue des 3 partyrs, Plateau des 15 ans-Brazzaville ( République du Congo) <br>
-                                    Sito Aéroport -Lomé ( République du TOGO )
-                                    </span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="footer-widget ps-5">
-                            <h3>Newsletter</h3>
-                            <p>Abonnez vous a notre Newsletter pour ne rien manquer </p>
-                            <div class="newsletter-area">
-                                <style>
-                                    .newsletter_grs {
-                                        position: relative;
-                                        margin-top: 15px;
-                                        background-color: var(--greenColor);
-                                        color: var(--whiteColor);
-                                        height: 50px;
-                                        line-height: 50px;
-                                        width: 100%;
-                                        border: 0;
-                                        -webkit-transition: var(--transition);
-                                        transition: var(--transition);
-                                        text-align: center;
-                                    }
 
-                                    .newsletter_grs .form-control {
-                                        background: #0e1125;
-                                        border-radius: 5px;
-                                        height: 50px;
-                                        line-height: 50px;
-                                        margin: 0;
-                                        border-radius: 0;
-                                        border: none;
-                                        padding: 0 25px;
-                                        max-width: 100%;
-                                        color: var(--whiteColor);
-                                        border: 1px solid var(--whiteColor);
-                                    }
-                                    .newsletter_grs .subscribe-btn {
-                                        margin-top: 15px;
-                                        background-color: var(--greenColor);
-                                        color: var(--whiteColor);
-                                        height: 50px;
-                                        line-height: 50px;
-                                        width: 100%;
-                                        border: 0;
-                                        -webkit-transition: var(--transition);
-                                        transition: var(--transition);
-                                        text-align: center;
-                                    }
-                                </style>
-                                <form class="newsletter_grs" action="<?php echo  $form_newsletter ?>" method="POST">
-                                    <input type="email" class="form-control" placeholder="Enter Your Email" name="email_send" required/>
-                                    <button class="subscribe-btn" type="submit">
-                                        Souscrire
-                                    </button>
-                                    
-                                    <!-- <div id="validator-newsletter" class="form-result"></div> -->
-                                </form>
+<?php
+$boutique = info_boutique();
+var_dump($boutique);
+//foreach($boutique as $boutiquee) {
+?> 
+<footer class="footer-area footer-area-bg">
+            <div class="container">
+                <div class="footer-top pt-100 pb-70">
+                    <div class="row">
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="footer-widget">
+                                <div class="footer-logo">
+                                    <a href="index.php">
+                                        <img src="<?=$boutiquee->logo?>" alt="Images" />
+                                    </a>
+                                </div>
+                                <p>
+                             <?= $boutiquee->description?>      
+                                </p>
+                                <ul class="social-link">
+                                    <li>
+                                        <a href="<?=$boutiquee->lien_facebook?>" target="_blank">
+                                            <i class="bx bxl-facebook"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="<?=$boutiquee->lien_linkedin?>" target="_blank">
+                                            <i class="bx bxl-linkedin"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="<?=$boutiquee->lien_pinterest?>" target="_blank">
+                                            <i class="bx bxl-pinterest-alt"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="<?=$boutiquee->lien_instagram?>" target="_blank">
+                                            <i class="bx bxl-instagram"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-sm-6">
+                            <div class="footer-widget ps-5">
+                                <h3>Liens utiles</h3>
+                                <ul class="footer-list">
+                                    <li>
+                                        <a href="index.php" target="_blank">
+                                            Accueil
+                                        </a> 
+                                    </li>
+                                    <li>
+                                        <a href="about.php" target="_blank">
+                                            À propos de nous
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="portfolio.php" target="_blank">
+                                            Portfolio
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="privacy-policy.php" target="_blank">
+                                            Politique de confidentialité
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="terms-condition.php" target="_blank">
+                                            Termes & Conditions
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="footer-widget ps-5">
+                                <h3>Informations</h3>
+                                <ul class="footer-contact">
+                                    <li>
+                                        Numéro de téléphone:
+                                        <span>
+                                            <a href="tel:+8245678924"><?=$boutiquee->numero_whatsapp_aide?></a><br />
+                                            <a href="tel:+8245668964"><?=$boutiquee->numero_whatsapp_aide_format?></a>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        Email:
+                                        <span>
+                                            <a href="https://templates.hibootstrap.com/cdn-cgi/l/email-protection#b0d8d5dcdff0d1c2c2dfdcd19ed3dfdd">
+                                                <span class="__cf_email__" data-cfemail="bad2dfd6d6d5fadbc8c8d5d6db94d9d5d7"><?=$boutiquee->email_officiel?></span>
+                                            </a>
+                                            <br />
+                                            <a href="https://templates.hibootstrap.com/cdn-cgi/l/email-protection#e980878f86a9889b9b868588c78a8684">
+                                                <span class="__cf_email__" data-cfemail="3b52555d547b5a494954575a15585456"><?=$boutiquee->email_officiel?></span>
+                                            </a>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        Adresse:
+                                        <span> <?=$boutiquee->rue .",". $boutiquee->ville .",<br />". $boutiquee->pays?>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="footer-widget ps-5">
+                                <h3>Newsletter</h3>
+                                <p><?=$boutiquee->text_accroche?></p>
+                                <div class="newsletter-area">
+                                    <form class="newsletter-form" data-toggle="validator" method="POST">
+                                        <input type="email" class="form-control" placeholder="Entrer votre adresse e-mail" name="EMAIL" required autocomplete="off" />
+                                        <button class="subscribe-btn" type="submit">
+                                            S'abonner
+                                        </button>
+                                        <div id="validator-newsletter" class="form-result"></div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="copyright-area">
-            <div class="container">
-            
-                <div class="copy-right-text text-center">
-                    <p>
-                        Copyright @
-                        <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-                        <script>
-                            document.write(new Date().getFullYear());
-                        </script>
-                        <b style="color : #f1af14"> Yemak santé et beauté</b> . Tous droits reservé par
-                        <a href="https://goldenrock.io"  style="color :rgb(255, 174, 34)" target="_blank">GOLDEN ROCK SARL</a>
-                    </p>
+            <div class="copyright-area">
+                <div class="container">
+                    <div class="copy-right-text text-center">
+                        <p>
+                            Copyright @
+                            <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+                            <script>
+                                document.write(new Date().getFullYear());
+                            </script>
+                            <?=$boutiquee->nom_website?>. Tous droits réservés par
+                            <a href="https://hibootstrap.com/" target="_blank">HiBootstrap</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <div class="modal fade fade-scale searchmodal" id="searchmodal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-bs-dismiss="modal">
+                            <i class="bx bx-x"></i>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="modal-search-form">
+                            <input type="search" class="search-field" placeholder="Rechercher..." />
+                            <button type="submit"><i class="bx bx-search-alt"></i></button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </footer>
+<?php 
+// }
+?>

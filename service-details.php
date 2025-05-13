@@ -42,8 +42,8 @@
                 <div class="dot2"></div>
             </div>
         </div>
-
-        <header class="top-header top-header-bg-two">
+        <?php include('includes/header.php') ?>
+        <!-- <header class="top-header top-header-bg-two">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-3 col-md-4">
@@ -405,7 +405,7 @@
                     </nav>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <div class="inner-banner inner-bg7">
             <div class="container">

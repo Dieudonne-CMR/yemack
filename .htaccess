@@ -19,3 +19,4 @@ RewriteEngine On
    RewriteRule ^home/([a-z0-9-]+)$  index.php?id=$1
 
    RewriteRule ^detail_recette/([A-Z0-9-]+)$      detail_recette.php?mat=$1
+   RewriteRule ^shop_details/([A-Z0-9-]+)$      shop-details.php?mat=$1
