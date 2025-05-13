@@ -1,3 +1,9 @@
+<!-- <div class="preloader">
+    <div class="spinner">
+        <div class="dot1"></div>
+        <div class="dot2"></div>
+    </div>
+</div> -->
 <header class="top-header top-header-bg-two">
     <div class="container">
         <div class="row align-items-center">
@@ -92,6 +98,7 @@
                 </a>
                 <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                     <ul class="navbar-nav m-auto">
+                        <li class="nav-item"> <a href="services">services</a></li>
                         <li class="nav-item">
                             <a href="blog" class="nav-link">
                                 Blog
