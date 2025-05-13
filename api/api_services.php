@@ -1,5 +1,5 @@
 <?php
-// $img_service="https://akila.blog/img_service/";  // lien des image des membres
+$img_service="https://akila.blog/img_service/";  // lien des image des membres
 // $matricule_entreprise="1011121121";
 // $matricule_entreprise="654b7262c7d05"; 
 
@@ -35,16 +35,16 @@ function recup_services(){
   }
 
 //------------recupe detail service
-  function Recuper_service_detail($mat_Services){
-    $service=[];
-    $data= recup_services();
-    foreach($data as $value){
-        if($value->matricule_service == $mat_Services){
-            $service []=$value;
-        }
-    }
-    return $service;
-}
+//   function Recuper_service_detail($mat_Services){
+//     $service=[];
+//     $data= recup_services();
+//     foreach($data as $value){
+//         if($value->matricule_service == $mat_Services){
+//             $service []=$value;
+//         }
+//     }
+//     return $service;
+// }
   /*
   exemple des donnees recuperer sortant dans variable: $services 
 exemple d'affichage d'une valeur (du titre d'un service):

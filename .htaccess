@@ -4,6 +4,10 @@ RewriteEngine On
    RewriteRule ^index|home$        index.php
    RewriteRule ^about$        about.php
    RewriteRule ^services$      services.php
+
+   RewriteRule ^service-detail/([a-z0-9-]+)$      service-details.php?mat=$1
+   RewriteRule ^blog.detail/([a-z0-9-]+)$      blog.details.php?mat=$1
+   
    RewriteRule ^blog$         blog.php
    RewriteRule ^shop$         shop.php
    RewriteRule ^register$     register.php
